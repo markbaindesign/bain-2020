@@ -1,0 +1,66 @@
+html { 
+
+	// Adjust the base font size depending on the context
+	font-size: font-boost( 0.85 );
+	@include bp( $mobile ){ font-size: font-boost( 0.9 ); } 
+	@include bp( $mobile-horizontal ){ font-size: font-boost( 0.95 ); } 
+	@include bp( $tablet ){ font-size: font-boost( 1 ); }
+	@include bp( $tablet-horizontal ){ font-size: font-boost( 1.05 ); }
+	@include bp( $desktop ){ font-size: font-boost( 1.08 ); } 
+	// @include bp( $desktop-wide ){ font-size: font-boost( 1.1 ); }
+}
+
+body { font-family: $base-font-stack; }
+
+%headers {
+	font-family: $alt-font-stack;
+	line-height: 1.25em;
+	font-weight: bold;
+	// Set explicit margins to avoid browser defaults
+	margin: 0 0 0.49em 0;
+}
+
+h1 { @extend .h1 !optional; }
+h2 { @extend .h2 !optional; }
+h3 { @extend .h3 !optional; }
+h4 { @extend .h4 !optional; }
+h5 { @extend .h5 !optional; }
+h6 { @extend .h6 !optional; }
+	
+small, .font_small { font-size: ms(0); }
+body{ font-size: ms(1);
+}
+
+// Header scale
+.h6 {font-size: $h6; @extend %headers !optional;}
+.h5 {font-size: $h5; @extend %headers !optional;}
+.h4 {font-size: $h4; @extend %headers !optional;}
+.h3 {font-size: $h3; @extend %headers !optional;}
+.h2 {font-size: $h2; @extend %headers !optional;}
+.h1 {font-size: $h1; @extend %headers !optional;}
+
+// Header resets
+.h6-reset {
+	@extend .h6;
+	@include margin-reset;
+}
+.h5-reset {
+	@extend .h5;
+	@include margin-reset;
+}
+.h4-reset {
+	@extend .h4;
+	@include margin-reset;
+}
+.h3-reset {
+	@extend .h3;
+	@include margin-reset;
+}
+.h2-reset {
+	@extend .h2;
+	@include margin-reset;
+}
+.h1-reset {
+	@extend .h1;
+	@include margin-reset;
+}

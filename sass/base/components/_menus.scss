@@ -1,0 +1,101 @@
+.menu {
+
+	&--dropdown {
+		.container {
+			@include bp( $tablet ) {
+				display: flex;		
+				align-items: stretch; 	// Items should fill the 
+										// vertical space for
+										// dropdown menus to 
+										// work.
+			}
+		}
+		
+		.menu {
+			margin: 0;
+			width: auto;			
+			@include bp( $tablet ) {
+				display: flex;		
+				align-items: stretch;
+			}
+			li {
+				text-align: left;
+				display: inherit;
+				align-items: stretch;
+				a {
+					display: inherit;
+					align-items: center;
+				}	
+			}
+		}
+
+		@include bp( $tablet ) {
+			margin: 0;	
+			// Allow for search toggle
+			// padding-right: $search-toggle-width;<
+		}
+
+		.sub-menu, 
+		.children {
+			@include bp( $tablet ){
+				padding: .88rem $menu_sub_offset;
+				width: $width_menu-item;
+				z-index: 2;
+				background-color: #eee;
+				li {
+					width: 100%;
+					text-align: left;
+					margin: 0;
+
+					a {
+						display: block;
+
+						&:hover {
+
+						}
+					}
+
+					ul { /* Level 2 sub menu */
+						left: -100%;
+						top: 0;
+					}
+
+					&:last-of-type {
+						border-bottom: none;
+					}
+				}
+			}
+		}
+
+		li {
+			ul {
+				@include bp($tablet){
+					left: -($menu_sub_offset);
+					top: 100%;
+					visibility: hidden;
+					position: absolute; // Overlay other content
+					opacity: 0;
+				}
+			}
+
+			&:hover > ul { 
+				@include bp($tablet){
+					display: block; // Sub-menus appear on hover
+					z-index: 2; // Above other items
+					opacity: 1;
+					visibility: visible;
+					@include transition(all, 0.3s, ease-in-out);
+				}
+			}
+		}
+	}
+}
+
+.nav-collapse {
+	transition: all 0.2s ease-in;
+
+	li:hover {
+		// background: rgba(0,0,0,.1);
+		@include transition(all, 0.3s, ease-in-out);
+	}
+}

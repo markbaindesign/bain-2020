@@ -1,0 +1,13 @@
+.archive {
+	.posts-section {
+		.container {
+		}
+	}
+}
+.archive-nav {
+	padding-top: 0;
+}
+
+.posts {
+	@extend .section;
+}

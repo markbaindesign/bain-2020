@@ -1,0 +1,81 @@
+# =========================
+# Various
+# =========================
+node_modules
+bower_components
+.sass-cache
+import
+export
+release
+
+# =========================
+# VVV provisioning
+# =========================
+
+provision/vvv-nginx.conf
+
+# =========================
+# WordPress 
+# =========================
+
+*.log
+
+# Ignore everything in the "public_html" directory except the "wp-content" directory.
+public_html/*
+!public_html/wp-content/
+
+# Ignore everything in the "wp-content" directory, except the "plugins"
+# and "themes" directories.
+public_html/wp-content/*
+!public_html/wp-content/plugins/
+!public_html/wp-content/themes/
+!public_html/wp-content/mu-plugins/
+ 
+# Ignore everything in the "plugins" directory, except the plugins you
+# specify (see the commented-out examples for hints on how to do this.)
+public_html/wp-content/plugins/*
+# !public_html/wp-content/plugins/my-single-file-plugin.php
+!public_html/wp-content/plugins/bain-2020-custom-functions/
+
+# Ignore everything in the "mu-plugins" directory, except the mu-plugins you
+# specify (see the commented-out examples for hints on how to do this.)
+public_html/wp-content/mu-plugins/*
+# !public_html/wp-content/mu-plugins/my-single-file-plugin.php
+# !public_html/wp-content/mu-plugins/my-directory-plugin/
+ 
+# Ignore everything in the "themes" directory, except the themes you
+# specify (see the commented-out example for a hint on how to do this.)
+public_html/wp-content/themes/*
+!public_html/wp-content/themes/bain-2020/
+
+
+# =========================
+# Operating System Files
+# =========================
+
+# Windows
+# =========================
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+*.map
+
+# Misc
+*.zip
+*.tar
+*.gz
+*.sql
+*.sublime-workspace

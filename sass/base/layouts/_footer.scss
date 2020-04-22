@@ -1,0 +1,93 @@
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.site-footer {
+	background-color: $grey;
+	.container {
+		@include bp( $tablet ) {
+
+		}
+	}
+	ul {
+		@extend %no-bullets !optional;
+		@include bp( $tablet ) {
+			text-align: left;
+		}
+		&.site-info {
+			margin-bottom: 2rem;
+			@include bp( $tablet ) {
+				margin-bottom: 0;
+			}
+			li {
+				padding: 1rem;
+				@include bp( $tablet ) {
+					padding: 0;
+				}
+			}
+		}
+	}
+	
+
+	
+}
+#back-to-top {
+	i:before {
+		content: $icon-font-up;
+	}
+}
+
+#signup {
+	
+	h2 {
+		margin-top: .5em;
+		i {
+			&.fa-envelope {
+				display: block;
+				@include bp( $tablet ) {
+					display: inline-block;
+				}
+			}
+		}
+	}
+}
+
+#footer-navigation {
+	// A menu in the footer
+
+	// TODO Rename section to "pre-footer"
+	@extend %remove-top-bottom-padding;
+	@include light-text-dark-bg;
+	background-color: $color-primary-tinted;
+	.menu {
+		@include center-block;
+		text-align: center;
+		margin: 0;
+		padding: 0;
+		// border-bottom: 1px solid darken( $grey, 14% );
+		li {
+			&:hover {
+				background-color: $color-primary-shaded;
+			}
+		}
+	}
+}
+
+
+#footer-logo {
+	padding: $block-padding;
+	margin-bottom: 1em;
+	@include bp( $tablet ) {
+		padding: 0;
+		margin-bottom: 0;
+	}
+	img {
+		width: 100%;
+		max-width: 230px;
+		opacity: .2;
+	}
+}
+
+// ======= Footnotes ======= //
+
+// 1. Although everything is already aligned center by default, 
+// lists are aligned *left* globally.

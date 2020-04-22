@@ -1,0 +1,9 @@
+{
+	"theme_name": "bain-2020",
+	"stylesheet_name": "style",
+	"theme_path": "public_html/wp-content/themes",
+	"plugin_name": "bain-2020-custom-functions",
+	"plugin_path": "public_html/wp-content/plugins",
+	"mu_plugin_path": "public_html/wp-content/mu-plugins",
+	"sass_theme_path": "sass/theme_base"
+}

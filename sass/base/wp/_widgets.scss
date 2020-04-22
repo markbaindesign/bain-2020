@@ -1,0 +1,84 @@
+// Widget Area
+
+#widget-area {
+	& > .container {
+	}
+
+	.widget-container {
+
+		.widget {
+			@extend .section;
+			border-bottom: 1px solid rgba(0,0,0,0.2);
+			@include bp( $tablet ) {
+				border-bottom: none;
+			}
+			ul {
+				@extend %no-bullets;
+				padding-bottom: 1rem;
+			}
+			li {
+				padding: 0;
+				a {
+					padding: 1rem;
+				}
+			}
+			.widget-title {
+				margin-bottom: 0;
+				padding: 1rem;
+			}
+		}
+	}
+
+
+	@include bp($tablet) {
+
+		li {
+			padding-bottom: 0;
+		}
+		h4 {
+			font-size: 1.6em;
+		}
+		&.two {
+			.widget-container {
+
+			}
+			.widget-container + .widget-container {
+
+			}
+		}
+		&.three {
+			.widget-container {
+
+			}
+			.widget-container + .widget-container {
+
+			}
+			.widget-container + .widget-container + .widget-container {
+
+			}
+		}
+	}
+
+	.menu {
+		text-align: center;
+		@include bp( $tablet ) {
+			text-align: left;
+		}
+		li {
+			display: block;
+			@include bp( $tablet ) {
+				text-align: left;
+				margin: 0;
+				padding: 0;
+			}
+			a {
+				@include bp( $tablet ) {
+					display: inline;
+					padding: 0;
+				}
+			}
+		}
+	}
+
+}
+

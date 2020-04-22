@@ -1,0 +1,154 @@
+/* ==========================================================================
+   Posts and pages
+   ========================================================================== */
+
+.byline {
+	display: none;
+	.group-blog & {
+		display: inline;
+	}
+}
+
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+
+.page-content img.wp-smiley,
+.entry-content img.wp-smiley,
+.comment-content img.wp-smiley {
+	border: none;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+}
+
+.site-main .gallery {
+	margin-bottom: 1.5em;
+}
+
+.gallery-caption {
+}
+
+.site-main .gallery a img {
+	border: none;
+	height: auto;
+	max-width: 90%;
+}
+
+.site-main .gallery dd,
+.site-main .gallery figcaption {
+	margin: 0;
+}
+
+.site-main .gallery-columns-4 .gallery-item {
+}
+
+.site-main .gallery-columns-4 .gallery-item img {
+}
+
+/* Make sure embeds and iframes fit their containers */
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
+
+
+.meta,
+.post-meta {
+	font-size: ms(0);
+	font-style: italic;
+
+	a {
+		text-decoration: none;
+		font-style: normal;
+	}
+}
+
+
+.entry-title a {
+	text-decoration: none;
+	border-bottom: none;
+}
+
+.post-meta {
+	margin-bottom: 1em;
+	img.avatar {
+		// margin-bottom: 5px;
+		margin-right: 5px;
+	}
+	.author {
+		&::after {
+			content: ", ";
+		}
+	}
+	span, time {
+		display: block;
+	}
+}
+
+img.avatar {
+	@extend .icon;
+}
+
+#lead {
+	margin: 0;
+	padding-top: 0;
+	padding-bottom: 0;
+	text-align: left;
+	@extend .meta-label !optional;
+
+	@include bp( $tablet ){
+		padding-top: 1em;
+		padding-bottom: 0;
+	}
+}
+
+.entry-title {
+	margin-bottom: 1em;
+}
+
+.categories-links {
+	h4 {
+		@extend .h2-meta !optional;	
+		margin-bottom: 5px;
+	}
+}
+
+.tags-links {
+	h4 {
+		@extend .h2-meta !optional;
+		margin-bottom: 5px;
+	}
+}
+
+.edit-link {display: none;}
+
+.primary-content-block,
+.secondary-content-block {
+	.nobullets {
+		margin-bottom: 1em !important;
+		a {border: none;}
+	}
+}
+
+#post-taxonomies {
+	@extend .section;
+	@extend .section-minor;
+	text-align: left;
+	header {
+		@extend .small-header !optional;
+	}
+	.post-taxonomies-categories, 
+	.post-taxonomies-tags {
+		@extend .container !optional;
+		@extend .container_narrow !optional;
+	}
+}
+
+#content #post-header {
+	.cover__custom-text +& {
+		display: none;
+	}
+}

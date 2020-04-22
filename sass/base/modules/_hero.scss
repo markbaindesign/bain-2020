@@ -1,0 +1,97 @@
+#hero {
+	@include bp( max-width 768px ) { // We need to target small devices
+		&[style] { // https://css-tricks.com/override-inline-styles-with-css/
+			background-image: none !important;
+		}
+	}
+	@include bp( $tablet ){
+		background-size: cover;
+		background-repeat: repeat;
+		background-position: center center;
+		background-size: cover;
+	} 
+	.container {
+		background: transparent;
+		@include bp($tablet) {
+			// background: url('assets/images/hero-background.jpg') no-repeat bottom right;
+		}
+		.content {		
+			display: block;
+			span { // Contains the content 
+				@include bp( $tablet ) {
+					height: 100%;
+				}
+			}
+			h1 {
+				@extend %padded-multiline;
+				line-height: 1.8;
+			}
+			@include bp( $tablet ) {
+				position: absolute;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				right: 0;
+				height: 100%;
+			}
+		}
+	}
+
+
+
+	.hero-image {
+		display: none;
+		margin: 0 auto;
+		padding: 0;
+		@include bp( $tablet ) {
+			display: block;
+			width: 30%;
+		}
+
+	}
+	.hero-text {
+
+		padding-top: 1em;
+		@include bp( $tablet ) {
+			width: 50%;
+			margin: 0 auto;
+			
+		}
+
+	}
+
+	a {
+		border-bottom: none;
+	}
+}
+
+// Modifications to the basic hero module for the home page
+
+.home .hero {
+
+	// Headers & typography
+
+
+
+	.hero-cta {
+				a {
+					padding: 1em; // Extra pad for bigness!
+				}
+		@include clearfix;
+		@include bp($mobile-horizontal){
+			margin-bottom: 1em;
+		}
+		@include bp($tablet){
+			margin-bottom: 2em;
+		}
+
+	}
+	#lead {
+		@include bp($tablet){
+			margin-bottom: 2em;
+		}
+	}
+}
+
+
+

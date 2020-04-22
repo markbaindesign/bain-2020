@@ -1,0 +1,58 @@
+/* ==========================================================================
+   Blog pages
+   ========================================================================== */
+
+#featured-post {
+	.container {
+	}
+}
+#posts-layout {
+	.container {
+
+	}
+}
+
+.image-wrapper {
+	padding: 4px;
+	border: 1px solid rgba(0, 0, 0, 0.15);
+	margin-bottom: 1em;
+	img {
+		width: 100%;
+	}
+}
+
+.grid-wrapper { // wraps the blog archive
+	@extend .container;
+
+	.section {
+		width: 100%;
+		background: #ddd;
+		margin-bottom: 10px;
+	
+		@include bp( $mobile-horizontal ){
+			width: $grid-sizer-1;
+		}	
+		@include bp( $tablet ){
+			width: $grid-sizer-2;
+		}
+	} 
+	article {
+		.entry-content {
+			width: 100%;
+			float: none;
+			margin: 0;
+		}
+	}
+}
+
+.readmore {
+	&__section {
+		padding-top: 0;
+	}
+}
+
+.posts {
+	&__wrapper {
+		@extend %grid-default;
+	}
+}

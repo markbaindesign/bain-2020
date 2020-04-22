@@ -1,0 +1,162 @@
+// Buttons
+
+%button {
+  text-decoration:        none;
+  width:                  auto; // Prevent buttons extending to 100% like other inputs
+  display:                inline-block;
+  transition:             all 0.3s ease-in-out;
+  border-radius:          $button-border-radius;
+  @extend                 %button--default;           // Size
+  color:                  $bn-p-color;                // Mostly here
+  background-color:       $bn-p-background;           // for <button>
+  border:                 $button-border-width        // element, which
+                          $button-border-style        // doesn't have 
+                          $bn-p-border-color;         // the link class
+  &:link,
+  &:visited {
+    color:                $bn-p-color;
+    text-decoration:      none;
+    background-color:     $bn-p-background;
+    border:               $button-border-width 
+                          $button-border-style 
+                          $bn-p-border-color;
+  }
+  &:hover,
+  &:active {
+    color:                $bn-p-color-hover;
+    background-color:     $bn-p-background-hover;
+    border:               $button-border-width 
+                          $button-border-style 
+                          $bn-p-border-color-hover;
+  }
+
+  // Primary
+
+  &--primary {
+    &:link,
+    &:visited {
+      color:              $bn-p-color;
+      text-decoration:    none;
+      background-color:   $bn-p-background;
+      border-color:       $bn-p-border-color;
+    }
+    &:hover,
+    &:active {
+      color:              $bn-p-color-hover;
+      background-color:   $bn-p-background-hover;
+      border-color:       $bn-p-border-color-hover;
+    }
+  }
+
+  // Secondary
+
+  &--secondary {
+    color:                $bn-s-color;
+    background-color:     $bn-s-background;
+    border-color:         $bn-s-border-color;
+    &:link,
+    &:visited {
+      color:              $bn-s-color;
+      background-color:   $bn-s-background;
+      border-color:       $bn-s-border-color;
+    }
+    &:hover,
+    &:active {
+      color:              $bn-s-color-hover;
+      background-color:   $bn-s-background-hover;
+      border-color:       $bn-s-border-color-hover;
+    }
+  }
+
+  &--ghost {
+    color:                $bn-g-color;
+    background-color:     $bn-g-background;
+    border-color:         $bn-g-border-color;
+    &:link,
+    &:visited {
+      color:              $bn-g-color;
+      background-color:   $bn-g-background;
+      border-color:       $bn-g-border-color;
+    }
+    &:hover,
+    &:active {
+      color:              $bn-g-color-hover;
+      background-color:   $bn-g-background-hover;
+      border-color:       $bn-g-border-color-hover;
+    }
+  }
+
+  // Sizes
+  &--default {
+    font-size:            $input-font-size-default;
+    padding:              $input-padding-default-v 
+                          $input-padding-default-h;
+  }
+  &--peta {
+    font-size:            $input-font-size-peta;
+    padding:              $input-padding-peta-v 
+                          $input-padding-peta-h;
+  }
+  &--giga {
+    font-size:            $input-font-size-giga;
+    padding:              $input-padding-giga-v
+                          $input-padding-giga-h;
+  }
+  &--mega {
+    font-size:            $input-font-size-mega;
+    padding:              $input-padding-mega-v
+                          $input-padding-mega-h;
+  }
+  &--kilo {
+    font-size:            $input-font-size-kilo;
+    padding:              $input-padding-kilo-v
+                          $input-padding-kilo-h;
+  }
+
+  &--micro {
+    font-size:            $input-font-size-micro;
+    padding:              $input-padding-micro-v
+                          $input-padding-micro-h;
+  }
+  &--nano {
+    font-size:            $input-font-size-nano;
+    padding:              $input-padding-nano-v
+                          $input-padding-nano-h;
+  }
+  &--pico {
+    font-size:            $input-font-size-pico;
+    padding:              $input-padding-pico-v
+                          $input-padding-pico-h;
+  }
+}
+
+// Basic buttons
+button,
+a.button,
+.button {
+  @extend                 %button;
+  @extend                 %button--default;
+  &.ghost,                // Legacy class, use .button--ghost
+  &--ghost {
+    @extend               %button--ghost;
+  }
+  &.secondary, // Legacy class, use .button--secondary
+  &--secondary {         @extend %button--secondary;
+  }
+  &--peta {               @extend %button--peta;
+  }
+  &--giga {               @extend %button--giga;
+  }
+  &--mega {               @extend %button--mega;
+  }
+  &--kilo {               @extend %button--kilo;
+  }
+  &--default {            @extend %button--default;
+  }
+  &--micro {              @extend %button--micro;
+  }
+  &--nano {               @extend %button--nano;
+  }
+  &--pico {               @extend %button--pico;
+  }
+}
