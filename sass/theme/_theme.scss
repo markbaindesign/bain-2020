@@ -5,25 +5,74 @@
 // Fontface
 
 @include fontface('LotaGrotesque-Black', 'assets/fonts', '39FAD9_1_0', 'normal', 'normal');
-
 @include fontface('LotaGrotesque-Bold', 'assets/fonts', '39FAD9_2_0', 'bold', 'normal');
-
 @include fontface('LotaGrotesque-SemiBold', 'assets/fonts', '39FAD9_6_0', 'normal', 'normal');
-
 @include fontface('LotaGrotesque-Regular', 'assets/fonts', '39FAD9_5_0', 'normal', 'normal');
-
 @include fontface('LotaGrotesque-RegularIt', 'assets/fonts', '39FAD9_0_0', 'bold', 'normal');
-
 @include fontface('LotaGrotesque-Light', 'assets/fonts', '39FAD9_4_0', 'normal', 'normal');
-
 @include fontface('LotaGrotesque-ExLight', 'assets/fonts', '39FAD9_3_0', 'bold', 'normal');
-
 @include fontface('LotaGrotesque-Thin', 'assets/fonts', '39FAD9_7_0', 'normal', 'normal');
 
-
+%all-caps {
+   text-transform: uppercase;
+   letter-spacing: 0.7px;
+   font-size: 90%;
+}
 
 // Remove default bolding
 .h1, .h2, .h3, .h4, .h5, .h6 {
 	font-weight: normal;
 	margin: 0;
+}
+
+.site-footer {
+   background-color: $black;
+   @extend %all-caps;
+   @include light-text-dark-bg;
+   
+   font-family: $alt-font-family;
+   .container {
+      opacity: 0.7;
+      @include bp($tablet){
+         display: flex;
+         flex-direction: row-reverse;
+         width: 100%;
+         justify-content: space-between;
+         align-items: center;
+         margin-bottom: 0;
+      }
+   }
+   .menu {
+      li {
+         display: inline-block;
+      }
+   }
+}
+
+.post__more {
+   @extend %all-caps;
+}
+
+.site-header {
+   .container {
+      align-items: center;
+      margin-top: 2rem;
+   }
+   .toggle {
+      color: $black;
+      margin-left: 9px;
+      &__label {
+         @extend %visuallyhidden;
+      }
+   }
+   .mburger {
+      b {
+         border-radius: 0;
+         &.icon--middle {
+            left: 2px;
+         }
+      }
+      --mb-button-size: 33px;
+      --mb-bar-height: 1px;
+   }
 }

@@ -15643,7 +15643,7 @@ readers do not read off random characters that represent icons */
 /*
  * Hide only visually, but have it available for screenreaders: h5bp.com/v
  */
-.toggle--icon.toggle--hidden-text span, .site-header .toggle--hidden-text.toggle--search span, .site-header .toggle--hidden-text.toggle--menu span, .site-header .toggle--hidden-text.toggle--dropdown span, .site-header .menu-item-has-children > a.toggle--hidden-text span, .site-header .page_item_has_children > a.toggle--hidden-text span {
+.site-header .toggle__label, .toggle--icon.toggle--hidden-text span, .site-header .toggle--hidden-text.toggle--search span, .site-header .toggle--hidden-text.toggle--menu span, .site-header .toggle--hidden-text.toggle--dropdown span, .site-header .menu-item-has-children > a.toggle--hidden-text span, .site-header .page_item_has_children > a.toggle--hidden-text span {
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;
@@ -16979,9 +16979,8 @@ ul.nav-menu li a {
 
 .site-header {
   background-color: #eee; }
-  .site-header .container .site-branding .site-logo, .site-header .cover__container .site-branding .site-logo, .site-header .grid-wrapper .site-branding .site-logo, .site-header #post-taxonomies .post-taxonomies-categories .site-branding .site-logo, #post-taxonomies .site-header .post-taxonomies-categories .site-branding .site-logo, .site-header #post-taxonomies .post-taxonomies-tags .site-branding .site-logo, #post-taxonomies .site-header .post-taxonomies-tags .site-branding .site-logo {
+  .site-header .site-logo {
     max-width: 100px;
-    padding: 10px 0;
     text-align: center; }
 
 .hidden-search, #search-toggle {
@@ -18192,8 +18191,56 @@ div.wpcf7 {
   src: url("assets/fonts/39FAD9_7_0.eot");
   src: url("assets/fonts/39FAD9_7_0.eot#iefix") format("embedded-opentype"), url("assets/fonts/39FAD9_7_0.woff") format("woff"), url("assets/fonts/39FAD9_7_0.ttf") format("truetype"), url("assets/fonts/39FAD9_7_0.svg#39FAD9_7_0") format("svg"); }
 
+.site-footer, .post__more {
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  font-size: 90%; }
+
 .h1, h1, .h1-reset, .h2, h2, #comments #reply-title, .h2-reset, .h3, h3, .h3-reset, .h4, h4, .h4-reset, .h5, h5, .h5-reset, .h6, h6, .h6-reset {
   font-weight: normal;
   margin: 0; }
+
+.site-footer {
+  background-color: black;
+  color: white;
+  font-family: "LotaGrotesque-SemiBold"; }
+  .site-footer a:link, .site-footer a:visited {
+    color: #fff; }
+  .site-footer a:hover {
+    color: white; }
+  .site-footer a:active {
+    color: white; }
+  .site-footer .container, .site-footer .cover__container, .site-footer .grid-wrapper, .site-footer #post-taxonomies .post-taxonomies-categories, #post-taxonomies .site-footer .post-taxonomies-categories,
+  .site-footer #post-taxonomies .post-taxonomies-tags, #post-taxonomies .site-footer .post-taxonomies-tags {
+    opacity: 0.7; }
+    @media (min-width: 768px) {
+      .site-footer .container, .site-footer .cover__container, .site-footer .grid-wrapper, .site-footer #post-taxonomies .post-taxonomies-categories, #post-taxonomies .site-footer .post-taxonomies-categories,
+      .site-footer #post-taxonomies .post-taxonomies-tags, #post-taxonomies .site-footer .post-taxonomies-tags {
+        display: flex;
+        flex-direction: row-reverse;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0; } }
+  .site-footer .menu li {
+    display: inline-block; }
+
+.site-header .container, .site-header .cover__container, .site-header .grid-wrapper, .site-header #post-taxonomies .post-taxonomies-categories, #post-taxonomies .site-header .post-taxonomies-categories,
+.site-header #post-taxonomies .post-taxonomies-tags, #post-taxonomies .site-header .post-taxonomies-tags {
+  align-items: center;
+  margin-top: 2rem; }
+
+.site-header .toggle, .site-header .menu-item-has-children > a,
+.site-header .page_item_has_children > a {
+  color: black;
+  margin-left: 9px; }
+
+.site-header .mburger {
+  --mb-button-size: 33px;
+  --mb-bar-height: 1px; }
+  .site-header .mburger b {
+    border-radius: 0; }
+    .site-header .mburger b.icon--middle {
+      left: 2px; }
 
 /*# sourceMappingURL=style.css.map */
