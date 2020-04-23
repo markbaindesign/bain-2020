@@ -1,3 +1,29 @@
 // Theme
 
 // Vars are imported in "styles.scss"
+
+// Fontface
+
+@include fontface('LotaGrotesque-Black', 'assets/fonts', '39FAD9_1_0', 'normal', 'normal');
+
+@include fontface('LotaGrotesque-Bold', 'assets/fonts', '39FAD9_2_0', 'bold', 'normal');
+
+@include fontface('LotaGrotesque-SemiBold', 'assets/fonts', '39FAD9_6_0', 'normal', 'normal');
+
+@include fontface('LotaGrotesque-Regular', 'assets/fonts', '39FAD9_5_0', 'normal', 'normal');
+
+@include fontface('LotaGrotesque-RegularIt', 'assets/fonts', '39FAD9_0_0', 'bold', 'normal');
+
+@include fontface('LotaGrotesque-Light', 'assets/fonts', '39FAD9_4_0', 'normal', 'normal');
+
+@include fontface('LotaGrotesque-ExLight', 'assets/fonts', '39FAD9_3_0', 'bold', 'normal');
+
+@include fontface('LotaGrotesque-Thin', 'assets/fonts', '39FAD9_7_0', 'normal', 'normal');
+
+
+
+// Remove default bolding
+.h1, .h2, .h3, .h4, .h5, .h6 {
+	font-weight: normal;
+	margin: 0;
+}
