@@ -1,42 +1,42 @@
-ul.social-media-links {
+.social-media-links {
 	@extend .nobullets !optional;
 	padding: 0;
 	li {
-		display: inline-block;
+		display: block; // Mobile-first
 		margin: 0 1rem 0 0; // Assumption: aligned left
-		a {
+	}
+	a {
+		i {
+			margin: 0 0.33rem 0 0;
+		}
+		&:link {
+			text-decoration: none;
+		}
+		&.twitter {
 			i {
-				margin: 0 0.33rem 0 0;
-			}
-			&:link {
-				text-decoration: none;
-			}
-			&.twitter {
-				i {
-					&.fa-circle {
-						color: $twitter;
-					}
+				&.fa-circle {
+					color: $twitter;
 				}
 			}
-			&.facebook:hover {
-				i { 
-					&.fa-circle {
-						color: $facebook;
-					}
+		}
+		&.facebook:hover {
+			i { 
+				&.fa-circle {
+					color: $facebook;
 				}
 			}
-			&.youtube {
-				i {
-					&.fa-circle {
-						color: $youtube;
-					}
+		}
+		&.youtube {
+			i {
+				&.fa-circle {
+					color: $youtube;
 				}
 			}
-			&.instagram {
-				i {
-					&.fa-circle {
-						color: $instagram;
-					}
+		}
+		&.instagram {
+			i {
+				&.fa-circle {
+					color: $instagram;
 				}
 			}
 		}

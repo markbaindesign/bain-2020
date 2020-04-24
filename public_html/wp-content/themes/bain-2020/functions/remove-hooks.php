@@ -13,8 +13,12 @@
  * 
  */
 
+remove_action('baindesign324_pre_colophon', 'baindesign324_related_blog_posts',              30);
+add_action('baindesign324_pre_colophon', 'baindesign324_related_blog_posts',              15);
 
 
+remove_action('baindesign324_header_bottom', 'baindesign324_header_bottom_wrapper_close', 100);
+remove_action('baindesign324_header_bottom', 'baindesign324_header_bottom_wrapper_open', 10);
 remove_action('baindesign324_header_top', 'baindesign324_toggle_search', 60);
 remove_action('baindesign324_header_top', 'baindesign324_search_bar', 70);
 remove_action('baindesign324_header_top', 'baindesign324_menu_standard', 30);

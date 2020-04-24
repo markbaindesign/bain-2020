@@ -15643,7 +15643,7 @@ readers do not read off random characters that represent icons */
 /*
  * Hide only visually, but have it available for screenreaders: h5bp.com/v
  */
-.site-header .toggle__label, .toggle--icon.toggle--hidden-text span, .site-header .toggle--hidden-text.toggle--search span, .site-header .toggle--hidden-text.toggle--menu span, .site-header .toggle--hidden-text.toggle--dropdown span, .site-header .menu-item-has-children > a.toggle--hidden-text span, .site-header .page_item_has_children > a.toggle--hidden-text span {
+.site-header .toggle__label, .toggle--icon.toggle--hidden-text span, .site-header .toggle--hidden-text.toggle--search span, .site-header .toggle--hidden-text.toggle--menu span, .site-header .toggle--hidden-text.toggle--dropdown span, .site-header .menu-item-has-children > a.toggle--hidden-text span, .site-header .page_item_has_children > a.toggle--hidden-text span, .site-footer .social-media-links li a i {
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;
@@ -16660,7 +16660,7 @@ Layout
     .section:last-of-type, .cover__section:last-of-type, .posts:last-of-type, #post-taxonomies:last-of-type, #widget-area .widget-container .widget:last-of-type {
       padding-bottom: 1.5rem; } }
   @media (min-width: 768px) {
-    .section--major {
+    .section--major, .site-footer, .cta, .posts--related {
       padding-top: 3rem;
       padding-bottom: 3rem; } }
 
@@ -17547,23 +17547,23 @@ ol.flex-control-nav {
 .post-nav-label {
   display: block; }
 
-ul.social-media-links {
+.social-media-links {
   padding: 0; }
-  ul.social-media-links li {
-    display: inline-block;
+  .social-media-links li {
+    display: block;
     margin: 0 1rem 0 0; }
-    ul.social-media-links li a i {
-      margin: 0 0.33rem 0 0; }
-    ul.social-media-links li a:link {
-      text-decoration: none; }
-    ul.social-media-links li a.twitter i.fa-circle {
-      color: #00aced; }
-    ul.social-media-links li a.facebook:hover i.fa-circle {
-      color: #3b5998; }
-    ul.social-media-links li a.youtube i.fa-circle {
-      color: #E14E50; }
-    ul.social-media-links li a.instagram i.fa-circle {
-      color: #517fa4; }
+  .social-media-links a i {
+    margin: 0 0.33rem 0 0; }
+  .social-media-links a:link {
+    text-decoration: none; }
+  .social-media-links a.twitter i.fa-circle {
+    color: #00aced; }
+  .social-media-links a.facebook:hover i.fa-circle {
+    color: #3b5998; }
+  .social-media-links a.youtube i.fa-circle {
+    color: #E14E50; }
+  .social-media-links a.instagram i.fa-circle {
+    color: #517fa4; }
 
 #social-sharing {
   padding: 0; }
@@ -17705,17 +17705,17 @@ object {
 .edit-link {
   display: none; }
 
-.primary-content-block .nobullets, .primary-content-block .image-grid ul, .image-grid .primary-content-block ul, .primary-content-block ul.social-media-links,
+.primary-content-block .nobullets, .primary-content-block .image-grid ul, .image-grid .primary-content-block ul, .primary-content-block .social-media-links,
 .secondary-content-block .nobullets,
 .secondary-content-block .image-grid ul,
 .image-grid .secondary-content-block ul,
-.secondary-content-block ul.social-media-links {
+.secondary-content-block .social-media-links {
   margin-bottom: 1em !important; }
-  .primary-content-block .nobullets a, .primary-content-block .image-grid ul a, .image-grid .primary-content-block ul a, .primary-content-block ul.social-media-links a,
+  .primary-content-block .nobullets a, .primary-content-block .image-grid ul a, .image-grid .primary-content-block ul a, .primary-content-block .social-media-links a,
   .secondary-content-block .nobullets a,
   .secondary-content-block .image-grid ul a,
   .image-grid .secondary-content-block ul a,
-  .secondary-content-block ul.social-media-links a {
+  .secondary-content-block .social-media-links a {
     border: none; }
 
 #post-taxonomies {
@@ -18220,10 +18220,24 @@ div.wpcf7 {
         flex-direction: row-reverse;
         width: 100%;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-start;
         margin-bottom: 0; } }
   .site-footer .menu li {
-    display: inline-block; }
+    text-align: left;
+    margin-bottom: 1rem; }
+    @media (min-width: 768px) {
+      .site-footer .menu li {
+        display: inline-block; } }
+  .site-footer .social-media-links {
+    margin: 5rem 0; }
+    @media (min-width: 768px) {
+      .site-footer .social-media-links {
+        margin: 0; } }
+    .site-footer .social-media-links li {
+      margin: 0 0 1rem 0;
+      display: block; }
+      .site-footer .social-media-links li a {
+        text-decoration: underline; }
 
 .site-header .container, .site-header .cover__container, .site-header .grid-wrapper, .site-header #post-taxonomies .post-taxonomies-categories, #post-taxonomies .site-header .post-taxonomies-categories,
 .site-header #post-taxonomies .post-taxonomies-tags, #post-taxonomies .site-header .post-taxonomies-tags {
@@ -18232,6 +18246,7 @@ div.wpcf7 {
 
 .site-header .toggle, .site-header .menu-item-has-children > a,
 .site-header .page_item_has_children > a {
+  margin-top: 5px;
   color: black;
   margin-left: 9px; }
 
@@ -18240,7 +18255,30 @@ div.wpcf7 {
   --mb-bar-height: 1px; }
   .site-header .mburger b {
     border-radius: 0; }
-    .site-header .mburger b.icon--middle {
-      left: 2px; }
+    @media (min-width: 768px) {
+      .site-header .mburger b.icon--middle {
+        left: 2px; } }
+
+.mm-menu {
+  font-size: 3rem;
+  font-family: "LotaGrotesque-SemiBold";
+  --mm-color-border: transparent;
+  --mm-listitem-size: 80px;
+  --mm-color-text: $white;
+  --mm-color-background: $black; }
+  .mm-menu li {
+    text-align: left; }
+
+.cta--main {
+  text-align: right;
+  color: white;
+  background-color: #1a1919;
+  font-size: 2.5rem; }
+  .cta--main a:link, .cta--main a:visited {
+    color: #fff; }
+  .cta--main a:hover {
+    color: white; }
+  .cta--main a:active {
+    color: white; }
 
 /*# sourceMappingURL=style.css.map */
