@@ -13,10 +13,10 @@ if (!function_exists('baindesign324_site_info_copyright')) :
       } else {
          $content .= do_action('bd324_copyright_symbol');
          $content .= '<span class="copyright__symbol">&copy;</span>';
-         $content .= date("Y");
+         $content .= '<span>' . date("Y") . '</span>';
          $content .= '<span class="copyright__sitename">';
          $content .= ' ';
-         $content .= bloginfo('name');
+         $content .= get_bloginfo('name');
          $content .= '</span>';
       }
       $content .= '</div>';
