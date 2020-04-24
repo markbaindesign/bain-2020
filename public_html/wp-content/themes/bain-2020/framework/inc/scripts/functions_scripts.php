@@ -10,7 +10,7 @@ require get_template_directory() . '/framework/inc/scripts/scripts-enqueue-twitt
 require get_template_directory() . '/framework/inc/scripts/scripts-enqueue-typekit.php';
 
 // Headhesive
-require get_template_directory() . '/framework/inc/scripts/scripts-headhesive.php';
+require get_template_directory() . '/framework/inc/scripts/headhesive-js.php';
 
 // Remove version
 require get_template_directory() . '/framework/inc/scripts/scripts-remove-version.php';

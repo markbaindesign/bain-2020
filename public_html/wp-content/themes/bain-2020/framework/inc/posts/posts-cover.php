@@ -32,8 +32,13 @@ if (!function_exists('baindesign324_cover')) :
    function baindesign324_cover()
    {
 
-      // Defaults
-      // $archive_image=$cover_image_url=$cover_image_position_horizontal=$cover_image_position_vertical=$cover_text='';
+      // Define vars
+      $archive_image='';
+      $cover_image_url='';
+      $cover_image_position_horizontal='';
+      $cover_image_position_vertical='';
+      $cover_text='';
+      $cover_class_source='';
 
       // $cover_image_default 			= get_theme_mod( 'baindesign324_default_archive_image', '' );
       $cover_text_vertical_alignment    = 'middle';

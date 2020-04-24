@@ -13,6 +13,8 @@
  * 
  */
 
+remove_action( 'wp_enqueue_scripts', 'bd324_enqueue_script_toggle', 10 );
+remove_action( 'wp_enqueue_scripts',      'baindesign324_enqueue_js_responsive_nav',      10 );
 remove_action('baindesign324_pre_colophon', 'baindesign324_related_blog_posts',              30);
 add_action('baindesign324_pre_colophon', 'baindesign324_related_blog_posts',              15);
 
