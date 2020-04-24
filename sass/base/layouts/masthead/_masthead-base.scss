@@ -1,6 +1,14 @@
 .site-header {
 	background-color: $grey;
 	@extend .menu--dropdown;
+	.container {
+		padding-top: $header-spacing-top;
+		padding-bottom: $header-spacing-bottom;
+		@include bp($tablet){
+			padding-top: $header-spacing-top;
+			padding-bottom: $header-spacing-bottom;
+		}
+	}
 	.site-logo {
 		max-width: 100px;
 		text-align: center;

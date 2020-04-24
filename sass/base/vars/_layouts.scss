@@ -33,7 +33,9 @@ $section-padding-minor-bottom: 1.5rem !default;
 $section-padding-major-top: 3rem !default;
 $section-padding-major-bottom: 3rem !default;
 
-//
+// Header Spacing
+$header-spacing-top: 1rem !default;
+$header-spacing-bottom: $header-spacing-top;
 
 // Input padding
 $input-padding-basis-v: 0.32rem !default;

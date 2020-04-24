@@ -35,10 +35,8 @@ Layout
   @include bp($tablet) {
     padding: 0;
     // Remove padding because... TODO
-
-    margin: 0 auto 2rem auto;
+    margin: 0 auto;
     // Center the container on the page.
-    // Separate from any subsequent .container elements
 
   }
 

@@ -23,6 +23,7 @@ add_action('baindesign324_header_top', 'baindesign324_header_top_wrapper_close',
 add_action('baindesign324_header_top', 'baindesign324_header_top_wrapper_open', 10);
 add_action('baindesign324_header_top', 'baindesign324_menu_standard', 30);
 add_action('baindesign324_header_top', 'baindesign324_mmenu_mhead', 5);
+add_action('baindesign324_header_top', 'baindesign324_sticky_header', 5);
 add_action('baindesign324_header_top', 'baindesign324_site_branding_title', 20);
 
 // Menu toggles

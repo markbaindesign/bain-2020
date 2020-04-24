@@ -76,11 +76,14 @@
 
 .site-header {
    .container {
+      display: flex;
+      justify-content: flex-start;
       align-items: center;
-      margin-top: 2rem;
+   }
+   .site-logo {
+      max-width: 32px;
    }
    .toggle {
-      margin-top: 5px;
       color: $black;
       margin-left: 9px;
       &__label {
@@ -90,10 +93,8 @@
    .mburger {
       b {
          border-radius: 0;
-         @include bp($tablet){
-            &.icon--middle {
-               left: 2px;
-            }
+         &.icon--middle {
+            left: 2px;
          }
       }
       --mb-button-size: 33px;
