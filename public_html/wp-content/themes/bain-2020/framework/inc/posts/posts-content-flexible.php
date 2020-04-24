@@ -106,7 +106,7 @@ if (!function_exists('bd324_flex_content_image_gallery')) :
       // Vars
       $row =      'image_gallery_section';
       $images =    get_sub_field('image_gallery_content');
-      $count =     count($images);
+      $count =     count(array($images));
       
       if($count == 1){
          $count_class = '1up';
@@ -184,7 +184,7 @@ if (!function_exists('bd324_flex_content_group_testimonial')) :
       // Vars
       $row =           'testimonial';
       $testimonials =   get_sub_field('testimonial');
-      $count =          count($testimonials);
+      $count =          count(array($testimonials));
       if (get_row_layout() != $row) {
          return;
       }
