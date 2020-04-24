@@ -4,6 +4,9 @@
 	li {
 		display: block; // Mobile-first
 		margin: 0 1rem 0 0; // Assumption: aligned left
+		&:last-of-type {
+			margin: 0;
+		}
 	}
 	a {
 		i {

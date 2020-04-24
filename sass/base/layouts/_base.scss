@@ -24,7 +24,11 @@ Layout
   &--major {
     @include bp($tablet) {
       padding-top: $section-padding-major-top;
-      padding-bottom: $section-padding-major-bottom;
+    }
+    &:last-of-type {
+      @include bp($tablet) {
+        padding-bottom: $section-padding-major-bottom;
+      }
     }
   }
 }

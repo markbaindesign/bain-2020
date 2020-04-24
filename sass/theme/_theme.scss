@@ -52,19 +52,21 @@
          }
       }
    }
-   .social-media-links {
-      @include bp($tablet){
-         margin: 0;
-      }
-      margin: 5rem 0;
-      li {
-         margin: 0 0 1rem 0;
-         display: block;
-         a {
-            text-decoration: underline;
-            i {
-               @extend %visually-hidden;
-            }
+
+}
+
+ul.social-media-links {
+   @include bp($tablet){
+      margin: 0;
+   }
+   margin: 5rem 0;
+   li {
+      margin: 0 0 1rem 0;
+      display: block;
+      a {
+         text-decoration: underline;
+         i {
+            @extend %visually-hidden;
          }
       }
    }
@@ -128,4 +130,5 @@
 
 .posts--related {
    @extend .section--major;
+   background-color: $grey;
 }

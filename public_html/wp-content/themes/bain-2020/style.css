@@ -15643,7 +15643,7 @@ readers do not read off random characters that represent icons */
 /*
  * Hide only visually, but have it available for screenreaders: h5bp.com/v
  */
-.site-header .toggle__label, .toggle--icon.toggle--hidden-text span, .site-header .toggle--hidden-text.toggle--search span, .site-header .toggle--hidden-text.toggle--menu span, .site-header .toggle--hidden-text.toggle--dropdown span, .site-header .menu-item-has-children > a.toggle--hidden-text span, .site-header .page_item_has_children > a.toggle--hidden-text span, .site-footer .social-media-links li a i {
+.site-header .toggle__label, .toggle--icon.toggle--hidden-text span, .site-header .toggle--hidden-text.toggle--search span, .site-header .toggle--hidden-text.toggle--menu span, .site-header .toggle--hidden-text.toggle--dropdown span, .site-header .menu-item-has-children > a.toggle--hidden-text span, .site-header .page_item_has_children > a.toggle--hidden-text span, ul.social-media-links li a i {
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;
@@ -16661,7 +16661,9 @@ Layout
       padding-bottom: 1.5rem; } }
   @media (min-width: 768px) {
     .section--major, .site-footer, .cta, .posts--related {
-      padding-top: 3rem;
+      padding-top: 3rem; } }
+  @media (min-width: 768px) {
+    .section--major:last-of-type, .site-footer:last-of-type, .cta:last-of-type, .posts--related:last-of-type {
       padding-bottom: 3rem; } }
 
 .container, .cover__container, .grid-wrapper, #post-taxonomies .post-taxonomies-categories,
@@ -17561,6 +17563,8 @@ ol.flex-control-nav {
   .social-media-links li {
     display: block;
     margin: 0 1rem 0 0; }
+    .social-media-links li:last-of-type {
+      margin: 0; }
   .social-media-links a i {
     margin: 0 0.33rem 0 0; }
   .social-media-links a:link {
@@ -18237,16 +18241,17 @@ div.wpcf7 {
     @media (min-width: 768px) {
       .site-footer .menu li {
         display: inline-block; } }
-  .site-footer .social-media-links {
-    margin: 5rem 0; }
-    @media (min-width: 768px) {
-      .site-footer .social-media-links {
-        margin: 0; } }
-    .site-footer .social-media-links li {
-      margin: 0 0 1rem 0;
-      display: block; }
-      .site-footer .social-media-links li a {
-        text-decoration: underline; }
+
+ul.social-media-links {
+  margin: 5rem 0; }
+  @media (min-width: 768px) {
+    ul.social-media-links {
+      margin: 0; } }
+  ul.social-media-links li {
+    margin: 0 0 1rem 0;
+    display: block; }
+    ul.social-media-links li a {
+      text-decoration: underline; }
 
 .site-header .container, .site-header .cover__container, .site-header .grid-wrapper, .site-header #post-taxonomies .post-taxonomies-categories, #post-taxonomies .site-header .post-taxonomies-categories,
 .site-header #post-taxonomies .post-taxonomies-tags, #post-taxonomies .site-header .post-taxonomies-tags {
@@ -18291,5 +18296,8 @@ div.wpcf7 {
     color: white; }
   .cta--main a:active {
     color: white; }
+
+.posts--related {
+  background-color: #eee; }
 
 /*# sourceMappingURL=style.css.map */
