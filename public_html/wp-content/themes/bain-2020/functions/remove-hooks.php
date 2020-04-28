@@ -12,6 +12,7 @@
  * remove_action( 'baindesign324_pre_colophon', 'baindesign324_mailchimp_form', 20 );
  * 
  */
+remove_action('baindesign324_primary_after',      'baindesign324_comments',                    50);
 remove_action('baindesign324_header_top', 'baindesign324_mmenu_mhead', 5);
 remove_action('baindesign324_header_top', 'baindesign324_sticky_header', 5);
 remove_action( 'wp_enqueue_scripts', 'bd324_enqueue_script_toggle', 10 );
