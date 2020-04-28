@@ -19,7 +19,6 @@
 
    function bd324_related_posts_section_header()
    {
-
-      $header = 'Similar, but also different';
+      $header = 'Similar, but also very different';
       return $header;
    }
