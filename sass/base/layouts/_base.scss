@@ -14,21 +14,13 @@ Layout
     padding-left: $section-padding-left;
     padding-right: $section-padding-right;
     padding-top: $section-padding-minor-top;
-    padding-bottom: 0;
+    padding-bottom: $section-padding-minor-bottom;
   }
-  &:last-of-type {
-    @include bp($tablet) {
-      padding-bottom: $section-padding-minor-bottom;
-    }
-  }
+
   &--major {
     @include bp($tablet) {
       padding-top: $section-padding-major-top;
-    }
-    &:last-of-type {
-      @include bp($tablet) {
-        padding-bottom: $section-padding-major-bottom;
-      }
+      padding-bottom: $section-padding-major-bottom;
     }
   }
 }

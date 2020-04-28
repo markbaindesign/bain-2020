@@ -134,23 +134,27 @@ ul.social-media-links {
 .posts__wrapper {
    display: block;
    .post {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: auto auto;
-      gap: 0 15%;
-      margin-bottom: 5rem;
-      border-top: 1px solid $grey;
+      display: block;
+      border-top: 1px solid rgba(0,0,0,0.1);
+      margin-top: 1rem;
       padding-top: 1rem;
+      @include bp($tablet){
+         display: grid;
+         grid-template-columns: repeat(3, 1fr);
+         grid-template-rows: auto auto;
+         gap: 0 15%;
+      }
       &__body {
-
          display: grid;
          grid-template-columns: repeat(2, 1fr);
          grid-template-rows: repeat(2, 1fr);
       }
       &__title {
-         grid-column: 2/4;
-         margin: 0 0 5rem 0;
          line-height: 1;
+         @include bp($tablet){
+            grid-column: 2/4;
+            margin: 0 0 5rem 0;
+         }
          a {
             text-decoration: none;
             font-size: 2rem;
