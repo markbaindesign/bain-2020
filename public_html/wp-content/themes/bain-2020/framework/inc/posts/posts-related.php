@@ -80,23 +80,6 @@ if (!function_exists('bd324_get_related_posts')) :
 endif;
 
 /**
- * Show the related posts
- * 
- * Outputs a section with related posts
- */
-if (!function_exists('bd324_show_related_posts')) :
-   function bd324_show_related_posts()
-   {
-      // Check for related posts
-      $related = '';
-
-      // Show related posts if found
-      if ($related) {
-      }
-   }
-endif;
-
-/**
  * Related Posts Section Header
  */
 if (!function_exists('bd324_related_posts_section_header')) :
