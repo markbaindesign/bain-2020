@@ -18247,7 +18247,7 @@ div.wpcf7 {
   src: url("assets/fonts/39FAD9_7_0.eot");
   src: url("assets/fonts/39FAD9_7_0.eot#iefix") format("embedded-opentype"), url("assets/fonts/39FAD9_7_0.woff") format("woff"), url("assets/fonts/39FAD9_7_0.ttf") format("truetype"), url("assets/fonts/39FAD9_7_0.svg#39FAD9_7_0") format("svg"); }
 
-.site-footer, .posts__wrapper .post__more, .posts__wrapper .post__date, .single-project .project__meta__label {
+.site-footer, .posts__wrapper .post__more, .posts__wrapper .post__date, .post__date__date, .single-project .project__meta__label {
   text-transform: uppercase;
   letter-spacing: 0.7px;
   font-size: 90%; }
@@ -18403,6 +18403,15 @@ ul.social-media-links {
       display: none; }
     .posts__wrapper .post__date__published {
       display: none; }
+
+.post__author {
+  display: none; }
+
+.post__date__published {
+  display: none; }
+
+.page .post__date {
+  display: none; }
 
 .single-project .post__author {
   display: none; }

@@ -29,9 +29,10 @@ endif;
    function bd324_get_project_date($post_id = NULL)
    {
       $date = get_field('project_date', $post_id);
+
       if ($date){
          $content = '<div class="project__meta project__meta--date">';
-         $content .= '<span class="project__meta__label project__meta--date__label">Date</span>';
+         $content .= '<span class="project__meta__label project__meta--date__label">Completed</span>';
          $content .= '<span class="project__meta__divider project__meta--date__divider">: </span>';
          $content .= '<span class="project__meta__content project__meta--date__content">'.$date.'</span>';
          $content .= '</div>';

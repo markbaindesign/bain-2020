@@ -211,7 +211,26 @@ ul.social-media-links {
 
 // Single Post
 .post {
+   &__author {
+      display: none;
+   }
+   &__date {   
+      &__published {
+         display: none;
+      }
+      &__date {
+         @extend %all-caps;
+      }
+   }
+}
 
+// Page 
+.page {
+   .post {
+      &__date {   
+         display: none;
+      }
+   }
 }
 
 // Single Project
