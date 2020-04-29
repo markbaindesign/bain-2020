@@ -13,7 +13,17 @@
  * 
  */
 
- /**
+/**
+ * Related Posts Section Header
+ */
+function baindesign324_enqueue_mmenu_config()
+{
+   if (!is_admin()) {
+      wp_enqueue_script('baindesign324_mmenu_config', get_template_directory_uri() . '/assets/js/custom/mmenu-config-custom.js', array(), null, TRUE);
+   }
+}
+
+/**
  * Related Posts Section Header
  */
 
@@ -29,14 +39,14 @@ function bd324_related_posts_section_header()
  */
 function bd324_show_article_header()
 {
-   if ( is_single() || is_page() ) {
+   if (is_single() || is_page()) {
       echo '<header class="post__header">';
       echo baindesign324_post_title();
       echo baindesign324_post_author();
       echo bd324_get_post_date();
       echo bd324_get_project_client();
       echo bd324_get_project_date();
-      echo bd324_custom_tax_terms( 'skill' );
+      echo bd324_custom_tax_terms('skill');
       echo '</header>';
    }
 }

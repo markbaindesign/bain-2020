@@ -6,7 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
   new Mmenu("#offcanvas-main-nav", {
      // Options
     wrappers: ["wordpress"],
-    extensions: ["pagedim-white"]
+    extensions: ["pagedim-white"],
+    navbar: [{"add": "false"}]
   }, {
      // Configuration
    
