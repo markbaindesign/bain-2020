@@ -6,10 +6,10 @@ jQuery(document).ready(function ($) {
            background: "#000000",
            text: "#ffffff",
          },
-         button: {
+         /*button: {
            background: "#ffffff",
            text: "#000000",
-         },
+         },*/
        },
        position: "bottom-right",
        content: {

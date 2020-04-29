@@ -15777,7 +15777,7 @@ a.button,
   width: auto;
   display: inline-block;
   transition: all 0.3s ease-in-out;
-  border-radius: 7px;
+  border-radius: 0;
   color: white;
   background-color: black;
   border: 1px solid black; }
@@ -15831,23 +15831,23 @@ a.button,
   a.button.ghost,
   a.button--ghost,
   .button.ghost,
-  .button--ghost {
+  .button--ghost, .cc-window .cc-btn {
     color: white;
     background-color: transparent;
     border-color: white; }
     button.ghost:link, button--ghost:link,
     .button.ghost:link,
-    .button--ghost:link, button.ghost:visited, button--ghost:visited,
+    .button--ghost:link, .cc-window .cc-btn:link, button.ghost:visited, button--ghost:visited,
     .button.ghost:visited,
-    .button--ghost:visited {
+    .button--ghost:visited, .cc-window .cc-btn:visited {
       color: white;
       background-color: transparent;
       border-color: white; }
     button.ghost:hover, button--ghost:hover,
     .button.ghost:hover,
-    .button--ghost:hover, button.ghost:active, button--ghost:active,
+    .button--ghost:hover, .cc-window .cc-btn:hover, button.ghost:active, button--ghost:active,
     .button.ghost:active,
-    .button--ghost:active {
+    .button--ghost:active, .cc-window .cc-btn:active {
       color: black;
       background-color: white;
       border-color: white; }
@@ -18294,10 +18294,6 @@ div.wpcf7 {
 /**
  * Cookie consent pop up
  **/
-.cc-window {
-  background-color: black;
-  font-family: "LotaGrotesque-Regular", sans-serif; }
-
 blockquote {
   border: 0;
   font-style: italic; }
