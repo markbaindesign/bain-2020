@@ -13,8 +13,17 @@
  * 
  */
 
+ /**
+ * Custom cookie popup config
+ */
+function b324_enqueue_cookie_notice_config()
+  {
+    if (!is_admin()) {
+      wp_enqueue_script('bd324_cookie_notice_config', get_template_directory_uri() . '/assets/js/custom/cookie-notice-config.js', array('b324_cookie_notice'), null, TRUE);
+    }
+  }
 /**
- * Related Posts Section Header
+ * Custom mmenu JS config
  */
 function baindesign324_enqueue_mmenu_config()
 {

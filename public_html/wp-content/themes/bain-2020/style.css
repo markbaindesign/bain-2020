@@ -18291,6 +18291,13 @@ div.wpcf7 {
       .site-footer .menu li {
         display: inline-block; } }
 
+/**
+ * Cookie consent pop up
+ **/
+.cc-window {
+  background-color: black;
+  font-family: "LotaGrotesque-Regular", sans-serif; }
+
 blockquote {
   border: 0;
   font-style: italic; }

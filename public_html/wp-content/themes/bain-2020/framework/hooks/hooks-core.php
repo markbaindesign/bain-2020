@@ -84,7 +84,10 @@ add_action( 'wp_enqueue_scripts', 'baindesign324_enqueue_mmenu_config', 25 );
 add_action( 'wp_enqueue_scripts', 'baindesign324_enqueue_mmenu_hamburger', 30 );
 
 // Cookie notice
-add_action( 'wp_head', 'baindesign324_cookie_notice', 25 );
+add_action( 'wp_enqueue_scripts', 'b324_enqueue_cookie_notice', 20 );
+add_action( 'wp_enqueue_scripts', 'b324_enqueue_cookie_notice_config', 25 );
+add_action( 'wp_enqueue_scripts', 'b324_enqueue_cookie_notice_styles', 30 );
+
 
 // Typekit
 add_action( 'wp_head', 'bd324_typekit', 10 );
