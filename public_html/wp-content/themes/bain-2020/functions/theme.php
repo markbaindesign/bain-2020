@@ -39,6 +39,4 @@ function bd324_show_article_header()
       echo bd324_custom_tax_terms( 'skill' );
       echo '</header>';
    }
-
-
 }
