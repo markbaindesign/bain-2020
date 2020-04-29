@@ -17250,19 +17250,19 @@ img.last {
   font-size: 1.5rem; }
 
 @media (min-width: 480px) {
-  .posts--1 {
+  .posts--1, .section--gallery .gallery--1up {
     grid-template-columns: 1fr; } }
 
 @media (min-width: 480px) {
-  .posts--2 {
+  .posts--2, .section--gallery .gallery--2up {
     grid-template-columns: repeat(2, 1fr); } }
 
 @media (min-width: 480px) {
-  .posts--3 {
+  .posts--3, .section--gallery .gallery--3up {
     grid-template-columns: repeat(2, 1fr); } }
 
 @media (min-width: 1024px) {
-  .posts--3 {
+  .posts--3, .section--gallery .gallery--3up {
     grid-template-columns: repeat(3, 1fr); } }
 
 .cover {

@@ -45,3 +45,18 @@
     }
   }
 }
+
+  // Section -- Gallery
+.section--gallery {
+    .gallery {
+      &--1up {
+        @extend .posts--1;
+      }
+      &--2up {
+        @extend .posts--2;
+      }
+      &--3up {
+        @extend .posts--3;
+      }
+    }
+  }

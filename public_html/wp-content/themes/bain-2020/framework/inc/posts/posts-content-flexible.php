@@ -106,7 +106,7 @@ if (!function_exists('bd324_flex_content_image_gallery')) :
       // Vars
       $row =      'image_gallery_section';
       $images =    get_sub_field('image_gallery_content');
-      $count =     count(array($images));
+      $count =     count($images);
       
       if($count == 1){
          $count_class = '1up';
