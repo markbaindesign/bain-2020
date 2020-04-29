@@ -2,6 +2,9 @@
 
 /**
  * "Latest Post" query
+ * 
+ * Use this to check for the existence of posts, 
+ * and to get the posts for display
  */
 
 if (!function_exists('bd324_query_latest_posts')) :
@@ -25,15 +28,17 @@ endif;
  * Show default "Latest Post" section
  * 
  */
-if (!function_exists('bd324_show_latest_posts')) :
-   function bd324_show_latest_posts($post_type = 'post', $number_of_posts = '1')
+if (!function_exists('bd324_show_latest_posts_section')) :
+   function bd324_show_latest_posts_section($post_type = 'post', $number_of_posts = '1', $header=NULL, $subheader=NULL )
    {
       /**
        * Run the query to see if we want to show this section
        */
+      
       $query = bd324_query_latest_posts($post_type, $number_of_posts);
+
+      // var_dump($subheader);
       if ($query->have_posts()) :
-         // Latest Post section
          $classes = array(
             'posts-grid',
             'posts--latest',
@@ -41,15 +46,20 @@ if (!function_exists('bd324_show_latest_posts')) :
             'posts--' . $post_type
          );
          baindesign324_generic_wrapper(NULL, $classes, NULL);
-         echo '<h1 class="posts__title">' . __('Latest', '_bd324theme') . '</h1>';
+         if ( $header ){
+            echo '<h1 class="posts__title">' . $header . '</h1>';
+         }
+         if ( $subheader ){
+            echo '<div class="subheader">' . $subheader . '</div>';
+         }
          echo '<div class="posts__wrapper posts__wrapper--featured posts__wrapper--post-count-' . $number_of_posts . '">';
-         /** Now loop through the posts */
          while ($query->have_posts()) :
             $query->the_post();
             get_template_part('content', 'featured');
          endwhile;
          echo '</div>';
          baindesign324_generic_wrapper(NULL, NULL, 'close');
+         
       endif;
       wp_reset_postdata();
    }
@@ -151,70 +161,71 @@ if (!function_exists('bd324_show_not_latest_posts')) :
          baindesign324_generic_wrapper(NULL, NULL, 'close');
       endif;
       // wp_reset_postdata();
-      
+
    }
 endif;
 
 // tell WordPress about our new query var
-function wpse52480_query_vars( $query_vars ){
+function wpse52480_query_vars($query_vars)
+{
    $query_vars[] = 'my_special_query';
    return $query_vars;
 }
-add_filter( 'query_vars', 'wpse52480_query_vars' );
+add_filter('query_vars', 'wpse52480_query_vars');
 
 // check if our query var is set in any query
-function wpse52480_pre_get_posts( $query ){
-   if( isset( $query->query_vars['my_special_query'] ) )
-       // do special stuff
+function wpse52480_pre_get_posts($query)
+{
+   if (isset($query->query_vars['my_special_query']))
+      // do special stuff
 
-   return $query;
+      return $query;
 }
-add_action( 'pre_get_posts', 'wpse52480_pre_get_posts' );
+add_action('pre_get_posts', 'wpse52480_pre_get_posts');
 
 
-add_action('pre_get_posts', 'mbdmaster_query_offset', 1 );
-function mbdmaster_query_offset(&$query) {
+add_action('pre_get_posts', 'mbdmaster_query_offset', 1);
+function mbdmaster_query_offset(&$query)
+{
 
    //Before anything else, make sure this is the right query...
-  if( ! isset( $query->query_vars['my_special_query'] ) ) {
-    return;
+   if (!isset($query->query_vars['my_special_query'])) {
+      return;
    }
- 
+
    //First, define your desired offset...
    $offset = 1;
-   
+
    //Next, determine how many posts per page you want (we'll use WordPress's settings)
    $ppp = get_option('posts_per_page');
 
    //Next, detect and handle pagination...
-   if ( $query->is_paged ) {
+   if ($query->is_paged) {
 
-       //Manually determine page query offset (offset + current page (minus one) x posts per page)
-       $page_offset = $offset + ( ($query->query_vars['paged']-1) * $ppp );
+      //Manually determine page query offset (offset + current page (minus one) x posts per page)
+      $page_offset = $offset + (($query->query_vars['paged'] - 1) * $ppp);
 
-       //Apply adjust page offset
-       $query->set('offset', $page_offset );
+      //Apply adjust page offset
+      $query->set('offset', $page_offset);
+   } else {
 
-   }
-   else {
-
-       //This is the first page. Just use the offset...
-       $query->set('offset',$offset);
-
+      //This is the first page. Just use the offset...
+      $query->set('offset', $offset);
    }
 }
 
 
-add_filter('found_posts', 'mbdmaster_adjust_offset_pagination', 1, 2 );
-function mbdmaster_adjust_offset_pagination($found_posts, $query) {
+add_filter('found_posts', 'mbdmaster_adjust_offset_pagination', 1, 2);
+function mbdmaster_adjust_offset_pagination($found_posts, $query)
+{
 
    //Define our offset again...
    $offset = 1;
 
    //Ensure we're modifying the right query object...
-   if( isset( $query->query_vars['my_special_query'] ) ) {
-       //Reduce WordPress's found_posts count by the offset... 
-     return $found_posts - $offset;
+   if (isset($query->query_vars['my_special_query'])) {
+      //Reduce WordPress's found_posts count by the offset... 
+      return $found_posts - $offset;
    }
    return $found_posts;
 }
@@ -222,63 +233,64 @@ function mbdmaster_adjust_offset_pagination($found_posts, $query) {
 // Work
 
 // tell WordPress about our new query var
-function mbdcptwork_query_vars( $query_vars ){
+function mbdcptwork_query_vars($query_vars)
+{
    $query_vars[] = 'my_special_cpt_query';
    return $query_vars;
 }
-add_filter( 'query_vars', 'mbdcptwork_query_vars' );
+add_filter('query_vars', 'mbdcptwork_query_vars');
 
 // check if our query var is set in any query
-function mbdcptwork_pre_get_posts( $query ){
-   if( isset( $query->query_vars['my_special_cpt_query'] ) )
-       // do special stuff
+function mbdcptwork_pre_get_posts($query)
+{
+   if (isset($query->query_vars['my_special_cpt_query']))
+      // do special stuff
 
-   return $query;
+      return $query;
 }
-add_action( 'pre_get_posts', 'mbdcptwork_pre_get_posts' );
+add_action('pre_get_posts', 'mbdcptwork_pre_get_posts');
 
-function mbdmaster_cpt_query_offset(&$query) {
+function mbdmaster_cpt_query_offset(&$query)
+{
 
    //Before anything else, make sure this is the right query...
-  if( ! isset( $query->query_vars['my_special_cpt_query'] ) ) {
-    return;
+   if (!isset($query->query_vars['my_special_cpt_query'])) {
+      return;
    }
- 
+
    //First, define your desired offset...
    $offset = 1;
-   
+
    //Next, determine how many posts per page you want (we'll use WordPress's settings)
    $ppp = get_option('posts_per_page');
 
    //Next, detect and handle pagination...
-   if ( $query->is_paged ) {
+   if ($query->is_paged) {
 
-       //Manually determine page query offset (offset + current page (minus one) x posts per page)
-       $page_offset = $offset + ( ($query->query_vars['paged']-1) * $ppp );
+      //Manually determine page query offset (offset + current page (minus one) x posts per page)
+      $page_offset = $offset + (($query->query_vars['paged'] - 1) * $ppp);
 
-       //Apply adjust page offset
-       $query->set('offset', $page_offset );
+      //Apply adjust page offset
+      $query->set('offset', $page_offset);
+   } else {
 
-   }
-   else {
-
-       //This is the first page. Just use the offset...
-       $query->set('offset',$offset);
-
+      //This is the first page. Just use the offset...
+      $query->set('offset', $offset);
    }
 }
-add_action('pre_get_posts', 'mbdmaster_cpt_query_offset', 1 );
+add_action('pre_get_posts', 'mbdmaster_cpt_query_offset', 1);
 
-function mbdmaster_adjust_cpt_offset_pagination($found_posts, $query) {
+function mbdmaster_adjust_cpt_offset_pagination($found_posts, $query)
+{
 
    //Define our offset again...
    $offset = 1;
 
    //Ensure we're modifying the right query object...
-   if( isset( $query->query_vars['my_special_cpt_query'] ) ) {
-       //Reduce WordPress's found_posts count by the offset... 
-     return $found_posts - $offset;
+   if (isset($query->query_vars['my_special_cpt_query'])) {
+      //Reduce WordPress's found_posts count by the offset... 
+      return $found_posts - $offset;
    }
    return $found_posts;
 }
-add_filter('found_posts', 'mbdmaster_adjust_cpt_offset_pagination', 1, 2 );
+add_filter('found_posts', 'mbdmaster_adjust_cpt_offset_pagination', 1, 2);

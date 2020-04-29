@@ -53,3 +53,74 @@
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+// Section Layouts
+.section {
+  &--media-block {
+    .container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+
+    }
+    .post {
+      &__title {
+        @extend .post__header !optional;
+        text-align: left;
+        grid-row: 2/3;
+        grid-column: 2/4;
+        @include bp($tablet) {
+          padding: 
+            $media-block-text-top-padding
+            $media-block-text-side-padding
+            $media-block-text-top-padding
+            0;
+          margin: 0;
+        }
+      }
+      &__body {
+        grid-row: 3/5;
+
+      }
+      &__image {
+        grid-column: 3/5;
+        grid-row: 1/5;
+      }
+    }
+    &--image-left {
+      // @extend %grid-image-left;
+      .container {
+        @include bp($tablet) {
+          grid-template-columns: 1fr 2fr 110px minmax(200px, 1fr);
+          gap: 0;
+        }
+      }
+      .post {
+        &__body {
+          @include bp($tablet) {
+            padding: $media-block-text-top-padding
+              $media-block-text-side-padding;
+          }
+        }
+        &__body {
+          grid-column: 3/5;
+          grid-row: 3/4;
+  
+        }
+        &__image {
+          grid-column: 2/4;
+          grid-row: 1/5;
+        }
+        &__title {
+          text-align: left;
+          grid-row: 2/3;
+          grid-column: 3/5;
+          @include bp($tablet) {
+            padding: $media-block-text-top-padding
+              $media-block-text-side-padding;
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+}

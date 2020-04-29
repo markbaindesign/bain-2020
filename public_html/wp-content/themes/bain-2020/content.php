@@ -44,9 +44,14 @@ if (have_rows('posts_page_flexible_content_sections')) :
          baindesign324_display_twitter_feed('front');
          baindesign324_generic_wrapper(NULL, NULL, 'close');*/
 
-      elseif (get_row_layout() == 'latest_blog_posts_layout') :
-         get_template_part('section','posts');
+      elseif (get_row_layout() == 'latest_posts_layout') :
+         // Vars
+         $number_of_posts =   get_sub_field('number_of_posts');
+         $post_type =         get_sub_field('post_type');
+         $header =            get_sub_field('section_header');
+         $subheader =         get_sub_field('section_sub-header');
 
+         bd324_show_latest_posts_section($post_type, $number_of_posts, $header, $subheader);
 
       elseif (get_row_layout() == 'mailchimp_signup_form_layout') :
          $classes = array(
@@ -63,7 +68,7 @@ if (have_rows('posts_page_flexible_content_sections')) :
 
          // Set classes
          $classes = array(
-            'section--media-block', 
+            'section--media-block',
             'section--flex',
             'section--media-block--image-' . $orientation
          );

@@ -78,6 +78,23 @@ if (!function_exists('bd324_flex_content_blockquote')) :
 endif;
 
 /**
+ * Flex content - Latest Posts
+ */
+if (!function_exists('bd324_show_latest_posts')) :
+   function bd324_show_latest_posts()
+   {
+    $classes = array('section--posts--latest', 'section--flex');
+    baindesign324_generic_wrapper(NULL, $classes, NULL);
+   // Vars
+   $post_type  = 'post';
+   $featured   = 3;
+   bd324_show_latest_posts($post_type, $featured);
+   // TO DO -.Get this from the flex content field
+    baindesign324_generic_wrapper(NULL, NULL, 'close');
+   }
+endif;
+
+/**
  * Flex content - Single Testimonial
  */
 if (!function_exists('bd324_flex_content_single_testimonial')) :
