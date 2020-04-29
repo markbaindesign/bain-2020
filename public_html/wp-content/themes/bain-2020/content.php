@@ -1,4 +1,3 @@
-<?php bd324_show_cover(); ?>
 <?php do_action('baindesign324_article_before'); ?>
 <?php do_action('baindesign324_content_before'); ?>
 <?php // Posts/page flex content

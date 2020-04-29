@@ -108,10 +108,10 @@ add_action('baindesign324_pre_header', 'baindesign324_social_links', 60);
 /**
  * Primary
  */
-add_action('baindesign324_primary_before', 'bd324_show_article_header', 20);
-add_action('baindesign324_primary_before', 'baindesign324_content_secondary', 40);
-add_action('baindesign324_primary_before', 'baindesign324_generic_wrapper_close', 30);
 add_action('baindesign324_primary_before', 'baindesign324_page_intro_wrapper_open', 10);
+add_action('baindesign324_primary_before', 'bd324_show_article_header', 20);
+add_action('baindesign324_primary_before', 'baindesign324_generic_wrapper_close', 30);
+add_action('baindesign324_primary_before', 'baindesign324_content_secondary', 40);
 
 // Templates
 // Assign content to templates

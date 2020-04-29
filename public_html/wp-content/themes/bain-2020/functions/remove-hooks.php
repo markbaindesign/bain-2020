@@ -12,6 +12,9 @@
  * remove_action( 'baindesign324_pre_colophon', 'baindesign324_mailchimp_form', 20 );
  * 
  */
+remove_action('baindesign324_content_after', 'baindesign324_post_tags_section', 10);
+remove_action('baindesign324_primary_before', 'baindesign324_content_secondary', 40);
+remove_action('baindesign324_pre_content', 'baindesign324_cover', 20);
 remove_action('baindesign324_primary_after',      'baindesign324_comments',                    50);
 remove_action('baindesign324_header_top', 'baindesign324_mmenu_mhead', 5);
 remove_action('baindesign324_header_top', 'baindesign324_sticky_header', 5);

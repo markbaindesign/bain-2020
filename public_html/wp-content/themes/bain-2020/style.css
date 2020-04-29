@@ -15734,7 +15734,7 @@ div.wpcf7 .focusable.screen-reader-response:focus {
  *	Colors
  *
  */
-.testimonials ul, .testimonials__list, .site-footer ul, #preheader #switcher #language-selector ul, .twitter-feed__list, #widget-area .widget-container .widget ul, .products, .woocommerce-notices-wrapper ul {
+.testimonials ul, .testimonials__list, .site-footer ul, #preheader #switcher #language-selector ul, .twitter-feed__list, #widget-area .widget-container .widget ul, .products, .woocommerce-notices-wrapper ul, .single-project .post-tags {
   margin: 0;
   padding: 0;
   list-style-type: none; }
@@ -18247,7 +18247,7 @@ div.wpcf7 {
   src: url("assets/fonts/39FAD9_7_0.eot");
   src: url("assets/fonts/39FAD9_7_0.eot#iefix") format("embedded-opentype"), url("assets/fonts/39FAD9_7_0.woff") format("woff"), url("assets/fonts/39FAD9_7_0.ttf") format("truetype"), url("assets/fonts/39FAD9_7_0.svg#39FAD9_7_0") format("svg"); }
 
-.site-footer, .posts__wrapper .post__more, .posts__wrapper .post__date {
+.site-footer, .posts__wrapper .post__more, .posts__wrapper .post__date, .single-project .project__meta__label {
   text-transform: uppercase;
   letter-spacing: 0.7px;
   font-size: 90%; }
@@ -18255,6 +18255,12 @@ div.wpcf7 {
 .h1, h1, .h1-reset, .h2, h2, #comments #reply-title, .h2-reset, .h3, h3, .h3-reset, .h4, h4, .h4-reset, .h5, h5, .h5-reset, .h6, h6, .h6-reset {
   font-weight: normal;
   margin: 0; }
+
+#post-header {
+  background-color: #eee; }
+
+#secondary {
+  background-color: #eee; }
 
 .site-footer {
   background-color: black;
@@ -18397,5 +18403,24 @@ ul.social-media-links {
       display: none; }
     .posts__wrapper .post__date__published {
       display: none; }
+
+.single-project .post__author {
+  display: none; }
+
+.single-project .post__date {
+  display: none; }
+
+.single-project .project__meta {
+  margin-top: 1rem; }
+  .single-project .project__meta__label {
+    display: block; }
+  .single-project .project__meta__divider {
+    display: none; }
+  .single-project .project__meta__content {
+    font-size: 1.5rem;
+    font-family: "LotaGrotesque-ExLight"; }
+
+.single-project .post-tags {
+  margin-top: 1rem; }
 
 /*# sourceMappingURL=style.css.map */

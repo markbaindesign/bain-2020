@@ -26,3 +26,4 @@ require get_template_directory() . '/framework/inc/posts/posts-testimonials-meta
 require get_template_directory() . '/framework/inc/posts/posts-title.php';
 require get_template_directory() . '/framework/inc/posts/search-functions.php';
 require get_template_directory() . '/framework/inc/posts/loops/loops.php';
+require get_template_directory() . '/framework/inc/posts/meta.php';
