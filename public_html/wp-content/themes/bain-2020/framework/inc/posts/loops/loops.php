@@ -29,38 +29,41 @@ endif;
  * 
  */
 if (!function_exists('bd324_show_latest_posts_section')) :
-   function bd324_show_latest_posts_section($post_type = 'post', $number_of_posts = '1', $header=NULL, $subheader=NULL )
-   {
-      /**
-       * Run the query to see if we want to show this section
-       */
-      
-      $query = bd324_query_latest_posts($post_type, $number_of_posts);
 
-      // var_dump($subheader);
-      if ($query->have_posts()) :
-         $classes = array(
-            'posts-grid',
-            'posts--latest',
-            'posts--' . $number_of_posts,
-            'posts--' . $post_type
-         );
+   function bd324_show_latest_posts_section($post_type = 'post', $number_of_posts = '1', $header = NULL, $subheader = NULL)
+   {
+      $my_query = bd324_query_latest_posts($post_type, $number_of_posts);
+
+      // Classes
+      $classes = array(
+         'posts',
+         'posts--latest',
+         'posts--' . $number_of_posts,
+         'posts--' . $post_type
+      );
+
+      if ($my_query->have_posts()) :
          baindesign324_generic_wrapper(NULL, $classes, NULL);
-         if ( $header ){
-            echo '<h1 class="posts__title">' . $header . '</h1>';
-         }
-         if ( $subheader ){
-            echo '<div class="subheader">' . $subheader . '</div>';
-         }
+
+         // Section Header
+         echo bd324_get_section_header($header, $subheader);
+
+         // Section content
          echo '<div class="posts__wrapper posts__wrapper--featured posts__wrapper--post-count-' . $number_of_posts . '">';
-         while ($query->have_posts()) :
-            $query->the_post();
-            get_template_part('content', 'featured');
+
+         // The loop
+         while ($my_query->have_posts()) :
+            $my_query->the_post();
+            get_template_part('content-archive');
          endwhile;
+
          echo '</div>';
+
          baindesign324_generic_wrapper(NULL, NULL, 'close');
-         
+
       endif;
+
+      // Rest query
       wp_reset_postdata();
    }
 endif;

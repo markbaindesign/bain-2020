@@ -1,34 +1,50 @@
 <?php
 
 /**
- * Show a set of related posts based on tags
+ * Get a set of related posts based on tags
  */
 
-if (!function_exists('baindesign324_related_blog_posts')) :
-   function baindesign324_related_blog_posts()
+if (!function_exists('bd324_get_related_posts_section')) :
+
+   function bd324_get_related_posts_section($post_type, $number_of_posts = '3', $post_id = NULL, $header = NULL, $subheader = NULL)
    {
       global $post;
       $orig_post = $post;
-      $my_query = bd324_get_related_posts();
-      $header = bd324_related_posts_section_header();
+      $my_query = bd324_get_related_posts($post_type, $number_of_posts, $post_id);
+
+      // Debug
+      // var_dump($my_query);
+
+      // Classes
+      $classes = array(
+         'posts',
+         'posts--related',
+         'posts--' . $number_of_posts,
+         'posts--' . $post_type
+      );
 
       if ($my_query->have_posts()) :
-         $classes = array(
-            'posts',
-            'posts--related',
-         );
+
          baindesign324_generic_wrapper(NULL, $classes, NULL);
-         echo '<header><h3>';
-         _e($header, '_baindesign');
-         echo '</h3></header>';
+
+         // Section Header
+         echo bd324_get_section_header($header, $subheader);
+
+         // Section content
          echo '<div class="posts__wrapper">';
-         while ($my_query->have_posts()) {
+
+         // The loop
+         while ($my_query->have_posts()) :
             $my_query->the_post();
-            get_template_part('content', 'archive');
-         }
+            get_template_part('content-archive');
+         endwhile;
+
          echo '</div>';
+
          baindesign324_generic_wrapper(NULL, NULL, 'close');
+
       endif;
+
       // Reset query
       $post = $orig_post;
       wp_reset_query();
@@ -39,10 +55,8 @@ endif;
  * Get related posts
  */
 if (!function_exists('bd324_get_related_posts')) :
-   function bd324_get_related_posts()
+   function bd324_get_related_posts($post_type, $number_of_posts, $post_id)
    {
-      $id = get_the_ID();
-      $post_type = get_post_type($id);
 
       if ($post_type == 'project') {
          $tax = 'skill';
@@ -51,7 +65,7 @@ if (!function_exists('bd324_get_related_posts')) :
       }
 
       $custom_taxterms = wp_get_object_terms(
-         $id,
+         $post_id,
          $tax,
          array(
             'fields' => 'ids'
@@ -61,9 +75,9 @@ if (!function_exists('bd324_get_related_posts')) :
       $args = array(
          'post_type' => $post_type,
          'post__not_in' => array(
-            $post->ID
+            $post_id
          ),
-         'posts_per_page'           => 3,
+         'posts_per_page'           => $number_of_posts,
          'ignore_sticky_posts'      => 1,
          'tax_query' => array(
             array(
@@ -80,19 +94,23 @@ if (!function_exists('bd324_get_related_posts')) :
 endif;
 
 /**
- * Related Posts Section Header
+ * Default Related Post Section
  */
-if (!function_exists('bd324_related_posts_section_header')) :
-   function bd324_related_posts_section_header()
+if (!function_exists('bd324_show_related_posts_section')) :
+   function bd324_show_related_posts_section()
    {
-      $id = get_the_ID();
-      $post_type = get_post_type($id);
-
-      if ($post_type == 'project') {
-         $header = 'Related Projects';
-      } else {
-         $header = 'Related Posts';
+      if ( ! is_single()){
+         return;
       }
-      return $header;
+      // Vars
+      $post_id = get_the_ID();
+      $post_type = get_post_type($post_id);
+      $number_of_posts = '3';
+      $header = bd324_get_related_posts_section_header( $post_type );
+      // $subheader = '';
+
+      $content = bd324_get_related_posts_section( $post_type, $number_of_posts, $post_id, $header);
+
+      echo $content;
    }
 endif;

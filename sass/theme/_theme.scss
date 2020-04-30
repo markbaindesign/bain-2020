@@ -251,6 +251,10 @@ ul.social-media-links {
          vertical-align: top;
         text-decoration: none;
         font-size: 2rem;
+        @include bp($tablet){
+           font-size: 3rem;
+           line-height: 1.1;
+        }
       }
     }
     &__image {

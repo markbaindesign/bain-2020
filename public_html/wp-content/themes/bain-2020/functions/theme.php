@@ -36,7 +36,7 @@ function baindesign324_enqueue_mmenu_config()
  * Related Posts Section Header
  */
 
-function bd324_related_posts_section_header()
+function bd324_get_related_posts_section_header()
 {
    $header = 'Similar, but also very different';
    return $header;

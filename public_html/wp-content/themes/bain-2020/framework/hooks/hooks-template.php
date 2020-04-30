@@ -40,7 +40,7 @@ add_action('baindesign324_header_top', 'baindesign324_toggle_search', 60);
  */
 add_action('baindesign324_pre_colophon', 'bd324_pagination_section',                      10);
 add_action('baindesign324_pre_colophon', 'bd324_main_cta',                                20);
-add_action('baindesign324_pre_colophon', 'baindesign324_related_blog_posts',              30);
+add_action('baindesign324_pre_colophon', 'bd324_show_related_posts_section',              30);
 add_action('baindesign324_pre_colophon', 'bd324_mailchimp_form_section',                   40);
 add_action('baindesign324_pre_colophon', 'baindesign324_footer_sidebars',                 50);
 add_action('baindesign324_pre_colophon', 'baindesign324_footer_sidebar',                  60);
