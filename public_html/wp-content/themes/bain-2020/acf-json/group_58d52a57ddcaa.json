@@ -172,6 +172,50 @@
                     "display": "block",
                     "sub_fields": [
                         {
+                            "key": "field_5eaaa855cb03d",
+                            "label": "Text Size",
+                            "name": "text_size",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "Larger?",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
+                            "key": "field_5eaaaaa305fde",
+                            "label": "Columns",
+                            "name": "columns",
+                            "type": "radio",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "1": "1",
+                                "2": "2",
+                                "3": "3"
+                            },
+                            "allow_null": 0,
+                            "other_choice": 0,
+                            "default_value": 1,
+                            "layout": "vertical",
+                            "return_format": "value",
+                            "save_other_choice": 0
+                        },
+                        {
                             "key": "field_58d52b96d8832",
                             "label": "Text",
                             "name": "text",
@@ -630,5 +674,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "Add sections to posts or pages, like text blocks, quotes, or image galleries",
-    "modified": 1588167212
+    "modified": 1588243135
 }

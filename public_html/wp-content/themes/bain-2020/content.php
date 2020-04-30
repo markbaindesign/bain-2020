@@ -5,10 +5,20 @@ if (have_rows('posts_page_flexible_content_sections')) :
    while (have_rows('posts_page_flexible_content_sections')) : the_row();
 
       if (bd324_flex_content_text_block()) :
+         $larger = get_sub_field('text_size');
+         $columns = get_sub_field('columns');
          $classes = array(
             'section--text-block',
             'section--flex'
          );
+         if ( $larger ){
+            $classes[] = 'section--text-block--larger';
+         }
+         if ( $columns == 2 || $columns == 3){
+            $classes[] = 'section--text-block--columns';
+            $classes[] = 'section--text-block--columns--' . $columns;
+         }
+         
          baindesign324_generic_wrapper(NULL, $classes, NULL);
          echo bd324_flex_content_text_block();
          baindesign324_generic_wrapper(NULL, NULL, 'close');

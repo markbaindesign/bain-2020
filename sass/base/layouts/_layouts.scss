@@ -123,4 +123,30 @@
       }
     }
   }
+
+  // Text Block 
+  &--text-block {
+    .text-block {
+      max-width: $text-block-width;
+    }
+    &--larger {
+      font-size: font-boost(1.3);
+    }
+    &--columns {
+      .text-block {
+        max-width: 100%;
+      }
+      &--2 {
+        .text-block {
+          columns: 2;
+        }
+      }
+      &--3 {
+        .text-block {
+          columns: 3;
+        }
+      }
+    }
+  }
+
 }
