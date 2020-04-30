@@ -18344,6 +18344,7 @@ ul.social-media-links {
       left: 2px; }
 
 .mm-menu {
+  padding-top: 70px;
   font-size: 3rem;
   font-family: "LotaGrotesque-ExLight";
   --mm-color-border: transparent;
