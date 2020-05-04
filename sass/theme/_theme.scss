@@ -79,11 +79,11 @@
 }
 
 #post-header {
-  background-color: #eee;
+  background-color: $color-neutral;
 }
 
 #secondary {
-  background-color: #eee;
+  background-color: $color-neutral;
 }
 
 .site-footer {
@@ -91,7 +91,6 @@
   @extend %all-caps;
   @include light-text-dark-bg;
   @extend .section--major;
-  font-family: $alt-font-family;
   .container {
     opacity: 0.7;
     @include bp($tablet) {
@@ -153,6 +152,7 @@ ul.social-media-links {
 }
 
 .site-header {
+  background-color: $color-neutral;
   .container {
     display: flex;
     justify-content: flex-start;
@@ -181,7 +181,8 @@ ul.social-media-links {
 }
 
 .mm-menu {
-   padding-top: 70px;
+  background-color: $color-neutral;
+  padding-top: 70px;
   font-size: 3rem;
   font-family: $alt-font-family;
   // --mm-color-background-emphasis: yellow;
@@ -190,6 +191,7 @@ ul.social-media-links {
   --mm-listitem-size: 80px;
   --mm-color-text: $white;
   --mm-color-background: $black;
+  --mm-color-background-emphasis: $color-primary; 
   li {
     text-align: left;
   }
@@ -200,7 +202,7 @@ ul.social-media-links {
   &--main {
     text-align: right;
     @include light-text-dark-bg;
-    background-color: lighten($black, 10%);
+    background-color: darken($color-primary-ultra-shaded, 20%);
     font-size: 2.5rem;
   }
 }
@@ -310,7 +312,7 @@ ul.social-media-links {
 .page {
   .post {
     &__date {
-      // display: none;
+      display: none;
     }
   }
 }
@@ -353,4 +355,26 @@ ul.social-media-links {
       margin: 0 auto;
     }
   }
+}
+
+// Forms
+fieldset {
+  border: none;
+  padding: 0;
+}
+form {
+  border: none;
+  padding: 0;
+  max-width: $text-block-width;
+  label {
+    @extend %all-caps;
+  }
+}
+
+%input {
+  padding:                         $input-padding;
+  width:                           100%;
+  border:                          none;
+  color:                           $black;
+  background-color:                $color-neutral-super-tinted;
 }
