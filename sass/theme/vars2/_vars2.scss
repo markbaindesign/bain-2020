@@ -1,2 +1,34 @@
 // Do not delete this file!
 // Even if empty!
+
+// Text Selection
+$background-color_text-selection: $color-neutral;
+
+// Buttons - Global
+$button-border-radius:           7px                  !default;
+$button-border-width:            1px                  !default;
+$button-border-style:            solid                !default;
+
+// Buttons - Primary
+$bn-p-color:                     $black;
+$bn-p-background:                $color-primary;
+$bn-p-border-color:              $color-primary;
+$bn-p-color-hover:               $black;
+$bn-p-background-hover:          darken($color-neutral, 10%);
+$bn-p-border-color-hover:        darken($color-neutral, 10%);
+
+// Buttons - Secondary
+$bn-s-color:                     $black;
+$bn-s-background:                darken($color-neutral, 10%);
+$bn-s-border-color:              darken($color-neutral, 10%);
+$bn-s-color-hover:               $black;
+$bn-s-background-hover:          $color-primary;
+$bn-s-border-color-hover:        $color-primary;
+
+// Buttons - Ghost
+$bn-g-color:                     $black;
+$bn-g-background:                $trans;
+$bn-g-border-color:              $black;
+$bn-g-color-hover:               $black;
+$bn-g-background-hover:          darken($color-neutral, 10%);
+$bn-g-border-color-hover:        darken($color-neutral, 10%);
