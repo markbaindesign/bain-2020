@@ -17268,7 +17268,7 @@ img.last {
   .section--media-block #post-taxonomies .post-taxonomies-tags, #post-taxonomies .section--media-block .post-taxonomies-tags {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 0 3%;
+    gap: 2rem 2rem;
     align-items: center; } }
 
 .section--media-block .post__title {
@@ -17280,22 +17280,24 @@ img.last {
       padding: 1rem 2rem 1rem 0;
       margin: 0; } }
 
-@media (min-width: 480px) {
-  .section--media-block .post__body {
-    grid-row: 1/2;
-    justify-self: end; } }
+.section--media-block .post__body {
+  margin-top: 2rem; }
+  @media (min-width: 480px) {
+    .section--media-block .post__body {
+      margin-top: 0;
+      grid-row: 1/2;
+      justify-self: end; } }
+  .section--media-block .post__body p {
+    margin-top: 1rem; }
+    @media (min-width: 480px) {
+      .section--media-block .post__body p {
+        margin-top: 0; } }
 
 @media (min-width: 480px) {
   .section--media-block .post__image {
     grid-column: 2/3;
     justify-self: start;
     max-height: 600px; } }
-
-@media (min-width: 768px) {
-  .section--media-block--image-left .container, .section--media-block--image-left .cover__container, .section--media-block--image-left .grid-wrapper, .section--media-block--image-left #post-taxonomies .post-taxonomies-categories, #post-taxonomies .section--media-block--image-left .post-taxonomies-categories,
-  .section--media-block--image-left #post-taxonomies .post-taxonomies-tags, #post-taxonomies .section--media-block--image-left .post-taxonomies-tags {
-    grid-template-columns: 1fr 2fr 110px minmax(200px, 1fr);
-    gap: 0; } }
 
 @media (min-width: 768px) {
   .section--media-block--image-left .post__body {
