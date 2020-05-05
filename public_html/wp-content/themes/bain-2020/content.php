@@ -7,6 +7,11 @@ if (have_rows('posts_page_flexible_content_sections')) :
       if (bd324_flex_content_text_block()) :
          $larger = get_sub_field('text_size');
          $columns = get_sub_field('columns');
+         $aside =     get_sub_field('aside');
+         $aside_content =       $aside['aside_content'];
+         $aside_position =        $aside['aside_position'];
+
+         // Classes
          $classes = array(
             'section--text-block',
             'section--flex'
@@ -17,6 +22,19 @@ if (have_rows('posts_page_flexible_content_sections')) :
          if ( $columns == 2 || $columns == 3){
             $classes[] = 'section--text-block--columns';
             $classes[] = 'section--text-block--columns--' . $columns;
+         }
+         if ( $aside ){
+            $classes[] = 'section--text-block--aside';
+         }
+         if ( $aside_content == 'image' ){
+            $classes[] = 'section--text-block--aside--image';
+         } else {
+            $classes[] = 'section--text-block--aside--text';
+         }
+         if ( $aside_position == 'left' ){
+            $classes[] = 'section--text-block--aside--left';
+         } else {
+            $classes[] = 'section--text-block--aside--right';
          }
          
          baindesign324_generic_wrapper(NULL, $classes, NULL);

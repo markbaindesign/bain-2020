@@ -58,9 +58,12 @@
 .section {
   &--media-block {
     .container {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-
+      @include bp($mobile-horizontal){
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0 3%;
+        align-items: center;
+      }
     }
     .post {
       &__title {
@@ -78,12 +81,17 @@
         }
       }
       &__body {
-        grid-row: 3/5;
-
+        @include bp($mobile-horizontal){
+          grid-row: 1/2;
+          justify-self: end;
+        }
       }
       &__image {
-        grid-column: 3/5;
-        grid-row: 1/5;
+        @include bp($mobile-horizontal){
+          grid-column: 2/3;
+          justify-self: start;
+          max-height: 600px;
+        }
       }
     }
     &--image-left {
@@ -97,25 +105,28 @@
       .post {
         &__body {
           @include bp($tablet) {
-            padding: $media-block-text-top-padding
+            padding: 
+              $media-block-text-top-padding
               $media-block-text-side-padding;
           }
         }
         &__body {
-          grid-column: 3/5;
-          grid-row: 3/4;
-  
+          @include bp($mobile-horizontal){
+            grid-column: 2/3;
+          }
         }
         &__image {
-          grid-column: 2/4;
-          grid-row: 1/5;
+          @include bp($mobile-horizontal){
+            grid-column: 1/2;
+          }
         }
         &__title {
           text-align: left;
           grid-row: 2/3;
           grid-column: 3/5;
           @include bp($tablet) {
-            padding: $media-block-text-top-padding
+            padding: 
+              $media-block-text-top-padding
               $media-block-text-side-padding;
             margin: 0;
           }
@@ -126,8 +137,44 @@
 
   // Text Block 
   &--text-block {
+    .container {
+      @include bp($tablet){
+        display: grid;
+        grid-template-columns: 1fr $text-block-width 1fr;
+        gap: $row-gap $column-gap;
+      }
+    }
+    &--aside {
+      .text-block__aside {
+        max-width: $text-block-width;
+        margin: 0 auto;
+        font-size: smaller;
+        @include bp($tablet){
+          grid-row: 1/2;
+        }
+      }
+      &--left {
+        .text-block__aside {
+          @include bp($tablet){
+            grid-column: 1/2;
+            text-align: right;
+          }
+        }
+      }
+      &--right {
+        .text-block__aside {
+          @include bp($tablet){
+            grid-column: 3/4;
+          }
+        }
+      }
+    }
     .text-block {
+      grid-column: 2/3;
       max-width: $text-block-width;
+      &__aside {
+
+      }
     }
     &--larger {
       font-size: font-boost(1.3);

@@ -9,13 +9,32 @@ if (!function_exists('bd324_flex_content_text_block')) :
       // Vars
       $row =      'text_block';
       $field =     get_sub_field('text');
+      $aside =     get_sub_field('aside'); // Group
+      $aside_content =       $aside['aside_content'];
+      $aside_image =       $aside['aside_image'];
+      $aside_image_url =       $aside_image['url'];
+      $aside_text =        $aside['aside_text'];
+      $content = '';
+
 
       if (get_row_layout() != $row) {
          return;
       }
-      $content = '<div class="text-block">';
+
+      $content .= '<div class="text-block">';
       $content .= $field;
       $content .= '</div>';
+
+      // Text Box Aside
+      if ( $aside ) {
+         $content .= '<div class="text-block__aside">';
+         if ( $aside_content == 'image' ) {
+            $content .= '<img src="'. $aside_image_url . '">';
+         } else {
+            $content .= $aside_text;
+         }
+         $content .= '</div>';
+      }
 
       return $content;
    }

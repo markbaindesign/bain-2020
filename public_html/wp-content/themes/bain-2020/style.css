@@ -22,6 +22,9 @@
 /**
  * Section padding
  **/
+/**
+ * Grids
+ **/
 /*!
 Animate.css - http://daneden.me/animate
 Licensed under the MIT license
@@ -16286,6 +16289,9 @@ body {
   margin-right: 0;
   margin-left: 0; }
 
+.text-block {
+  max-width: 44rem; }
+
 /* ==========================================================================
    Border-box all the things!
    ========================================================================== */
@@ -17257,10 +17263,13 @@ img.last {
   .posts--3, .section--gallery .gallery--3up {
     grid-template-columns: repeat(3, 1fr); } }
 
-.section--media-block .container, .section--media-block .cover__container, .section--media-block .grid-wrapper, .section--media-block #post-taxonomies .post-taxonomies-categories, #post-taxonomies .section--media-block .post-taxonomies-categories,
-.section--media-block #post-taxonomies .post-taxonomies-tags, #post-taxonomies .section--media-block .post-taxonomies-tags {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); }
+@media (min-width: 480px) {
+  .section--media-block .container, .section--media-block .cover__container, .section--media-block .grid-wrapper, .section--media-block #post-taxonomies .post-taxonomies-categories, #post-taxonomies .section--media-block .post-taxonomies-categories,
+  .section--media-block #post-taxonomies .post-taxonomies-tags, #post-taxonomies .section--media-block .post-taxonomies-tags {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0 3%;
+    align-items: center; } }
 
 .section--media-block .post__title {
   text-align: left;
@@ -17271,12 +17280,16 @@ img.last {
       padding: 1rem 2rem 1rem 0;
       margin: 0; } }
 
-.section--media-block .post__body {
-  grid-row: 3/5; }
+@media (min-width: 480px) {
+  .section--media-block .post__body {
+    grid-row: 1/2;
+    justify-self: end; } }
 
-.section--media-block .post__image {
-  grid-column: 3/5;
-  grid-row: 1/5; }
+@media (min-width: 480px) {
+  .section--media-block .post__image {
+    grid-column: 2/3;
+    justify-self: start;
+    max-height: 600px; } }
 
 @media (min-width: 768px) {
   .section--media-block--image-left .container, .section--media-block--image-left .cover__container, .section--media-block--image-left .grid-wrapper, .section--media-block--image-left #post-taxonomies .post-taxonomies-categories, #post-taxonomies .section--media-block--image-left .post-taxonomies-categories,
@@ -17288,13 +17301,13 @@ img.last {
   .section--media-block--image-left .post__body {
     padding: 1rem 2rem; } }
 
-.section--media-block--image-left .post__body {
-  grid-column: 3/5;
-  grid-row: 3/4; }
+@media (min-width: 480px) {
+  .section--media-block--image-left .post__body {
+    grid-column: 2/3; } }
 
-.section--media-block--image-left .post__image {
-  grid-column: 2/4;
-  grid-row: 1/5; }
+@media (min-width: 480px) {
+  .section--media-block--image-left .post__image {
+    grid-column: 1/2; } }
 
 .section--media-block--image-left .post__title {
   text-align: left;
@@ -17305,7 +17318,32 @@ img.last {
       padding: 1rem 2rem;
       margin: 0; } }
 
+@media (min-width: 768px) {
+  .section--text-block .container, .section--text-block .cover__container, .section--text-block .grid-wrapper, .section--text-block #post-taxonomies .post-taxonomies-categories, #post-taxonomies .section--text-block .post-taxonomies-categories,
+  .section--text-block #post-taxonomies .post-taxonomies-tags, #post-taxonomies .section--text-block .post-taxonomies-tags {
+    display: grid;
+    grid-template-columns: 1fr 44rem 1fr;
+    gap: 2rem 2rem; } }
+
+.section--text-block--aside .text-block__aside {
+  max-width: 44rem;
+  margin: 0 auto;
+  font-size: smaller; }
+  @media (min-width: 768px) {
+    .section--text-block--aside .text-block__aside {
+      grid-row: 1/2; } }
+
+@media (min-width: 768px) {
+  .section--text-block--aside--left .text-block__aside {
+    grid-column: 1/2;
+    text-align: right; } }
+
+@media (min-width: 768px) {
+  .section--text-block--aside--right .text-block__aside {
+    grid-column: 3/4; } }
+
 .section--text-block .text-block {
+  grid-column: 2/3;
   max-width: 44rem; }
 
 .section--text-block--larger {
