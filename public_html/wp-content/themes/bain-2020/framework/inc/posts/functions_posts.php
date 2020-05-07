@@ -27,3 +27,13 @@ require get_template_directory() . '/framework/inc/posts/search-functions.php';
 require get_template_directory() . '/framework/inc/posts/loops/loops.php';
 require get_template_directory() . '/framework/inc/posts/meta.php';
 require get_template_directory() . '/framework/inc/posts/section-header.php';
+
+// Helpers
+
+if ( ! function_exists( 'baindesign324_get_post_labels' ) ) :
+   function baindesign324_get_post_labels( $post_type ) {	
+      global $wp_post_types;
+      $labels = &$wp_post_types[$post_type]->labels;
+      return $labels;
+   }
+endif;
