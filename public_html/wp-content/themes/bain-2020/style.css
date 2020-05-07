@@ -16223,7 +16223,7 @@ html {
 body {
   font-family: "LotaGrotesque-Regular", sans-serif; }
 
-.h6, h6, .h6-reset, .h5, h5, .h5-reset, .h4, h4, .h4-reset, .h3, h3, .h3-reset, .paging__link, .h2, h2, #comments #reply-title, .h2-reset, .h1, h1, .h1-reset {
+.h6, h6, .h6-reset, .h5, h5, .h5-reset, .h4, h4, .h4-reset, .h3, h3, .h3-reset, .h2, h2, #comments #reply-title, .h2-reset, .h1, h1, .h1-reset {
   font-family: "LotaGrotesque-SemiBold", sans-serif;
   line-height: 1.25em;
   font-weight: bold;
@@ -16244,7 +16244,7 @@ body {
 .h4, h4, .h4-reset {
   font-size: calc(1.3 * calc(1.3 * 1rem)); }
 
-.h3, h3, .h3-reset, .paging__link {
+.h3, h3, .h3-reset {
   font-size: calc(1.3 * calc(1.3 * calc(1.3 * 1rem))); }
 
 .h2, h2, #comments #reply-title, .h2-reset {
@@ -18295,7 +18295,7 @@ div.wpcf7 {
   src: url("assets/fonts/39FAD9_7_0.eot");
   src: url("assets/fonts/39FAD9_7_0.eot#iefix") format("embedded-opentype"), url("assets/fonts/39FAD9_7_0.woff") format("woff"), url("assets/fonts/39FAD9_7_0.ttf") format("truetype"), url("assets/fonts/39FAD9_7_0.svg#39FAD9_7_0") format("svg"); }
 
-.site-footer, .posts__wrapper .post__more, .posts__wrapper .post__date, .post__date__date, .single-project .project__meta__label, form label {
+.testimonial .person__link, .site-footer, .posts__wrapper .post__more, .posts__wrapper .post__date, .post__date__date, .single-project .project__meta__label, form label {
   text-transform: uppercase;
   letter-spacing: 0.7px;
   font-size: 90%; }
@@ -18306,17 +18306,29 @@ a:not(.text-block):link, a:not(.text-block):active {
 a:not(.text-block):hover, a:not(.text-block):active {
   text-decoration: underline; }
 
-.paging {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem 2rem;
-  justify-content: space-between; }
-  .paging__link {
-    padding: 5rem;
-    text-align: center;
-    background-color: #F6F4EF; }
+@media (min-width: 768px) {
+  .paging {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem 2rem;
+    justify-content: space-between; } }
 
-.h1, h1, .h1-reset, .h2, h2, #comments #reply-title, .h2-reset, .h3, h3, .h3-reset, .paging__link, .h4, h4, .h4-reset, .h5, h5, .h5-reset, .h6, h6, .h6-reset {
+.paging__link {
+  margin-bottom: 1rem;
+  padding: 5rem;
+  font-size: 3rem;
+  text-align: center;
+  background-color: #F6F4EF; }
+  @media (min-width: 768px) {
+    .paging__link {
+      margin: 0; } }
+
+.testimonial {
+  text-align: center;
+  max-width: 80%;
+  margin: 0 auto; }
+
+.h1, h1, .h1-reset, .h2, h2, #comments #reply-title, .h2-reset, .h3, h3, .h3-reset, .h4, h4, .h4-reset, .h5, h5, .h5-reset, .h6, h6, .h6-reset {
   font-weight: normal;
   margin: 0; }
 

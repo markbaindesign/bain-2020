@@ -81,19 +81,35 @@ a {
 
 // Pagination / Paging Links
 .paging {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: $row-gap $column-gap;
-  justify-content: space-between;
+  @include bp($tablet){
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: $row-gap $column-gap;
+    justify-content: space-between;
+  }
   &__link {
+    margin-bottom: 1rem;
     padding: 5rem;
-    @extend .h3;
+    font-size: 3rem;
     text-align: center;
     background-color: $color-neutral;
+    @include bp($tablet){
+      margin: 0;
+    }
   }
 }
 
-
+// Testimonials
+.testimonial {
+  text-align: center;
+  max-width: 80%;
+  margin: 0 auto;
+  .person {
+    &__link {
+      @extend %all-caps;
+    }
+  }
+}
 
 // Remove default bolding
 .h1,
