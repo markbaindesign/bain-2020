@@ -67,6 +67,34 @@
   font-size: 90%;
 }
 
+// Links
+a {
+  &:not(.text-block) {
+    &:link, &:active {
+      text-decoration: none;
+    }
+    &:hover, &:active {
+      text-decoration: underline;
+    }
+  }
+}
+
+// Pagination / Paging Links
+.paging {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $row-gap $column-gap;
+  justify-content: space-between;
+  &__link {
+    padding: 5rem;
+    @extend .h3;
+    text-align: center;
+    background-color: $color-neutral;
+  }
+}
+
+
+
 // Remove default bolding
 .h1,
 .h2,
