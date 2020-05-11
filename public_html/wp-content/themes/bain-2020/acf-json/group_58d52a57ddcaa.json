@@ -796,6 +796,20 @@
                 "operator": "==",
                 "value": "project"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "testimonial_item"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "testimonial"
+            }
         ]
     ],
     "menu_order": 0,
@@ -806,5 +820,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "Add sections to posts or pages, like text blocks, quotes, or image galleries",
-    "modified": 1588670573
+    "modified": 1588866656
 }
