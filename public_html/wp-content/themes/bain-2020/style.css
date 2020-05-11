@@ -16124,7 +16124,7 @@ ul.sub-menu {
  **/
 .cc-window {
   background-color: black;
-  font-family: "LotaGrotesque-Regular", sans-serif; }
+  font-family: classic-comic, sans-serif, sans-serif; }
 
 table {
   margin: 0 0 1rem 0;
@@ -16221,10 +16221,10 @@ html {
       font-size: 14.04px; } }
 
 body {
-  font-family: "LotaGrotesque-Regular", sans-serif; }
+  font-family: classic-comic, sans-serif, sans-serif; }
 
 .h6, h6, .h6-reset, .h5, h5, .h5-reset, .h4, h4, .h4-reset, .h3, h3, .h3-reset, .h2, h2, #comments #reply-title, .h2-reset, .h1, h1, .h1-reset {
-  font-family: "LotaGrotesque-SemiBold", sans-serif;
+  font-family: classic-comic, sans-serif, sans-serif;
   line-height: 1.25em;
   font-weight: bold;
   margin: 0 0 0.49em 0; }
@@ -18416,7 +18416,7 @@ ul.social-media-links {
   background-color: #F6F4EF;
   padding-top: 70px;
   font-size: 3rem;
-  font-family: "LotaGrotesque-SemiBold";
+  font-family: classic-comic, sans-serif;
   --mm-color-border: transparent;
   --mm-listitem-size: 80px;
   --mm-color-text: $white;
@@ -18525,7 +18525,7 @@ ul.social-media-links {
     display: none; }
   .single-project .project__meta__content {
     font-size: 1.5rem;
-    font-family: "LotaGrotesque-SemiBold"; }
+    font-family: classic-comic, sans-serif; }
 
 .single-project .post-tags {
   margin-top: 1rem; }
