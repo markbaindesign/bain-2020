@@ -2,7 +2,7 @@
 
 ## By Bain Design
 
-### Version: 0.0.0
+### Version: 0.1.0
 
 ## Table of contents
 

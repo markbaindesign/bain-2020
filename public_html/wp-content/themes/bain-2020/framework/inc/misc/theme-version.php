@@ -19,7 +19,7 @@ if (!function_exists('baindesign324_theme_version')) :
       // theme version changes. 
       // Used to get version in stylesheet enqueue function
       // for cache-busting.
-      $version="1.2.1";
+      $version="0.1.0";
       return $version;
     }
 endif;
