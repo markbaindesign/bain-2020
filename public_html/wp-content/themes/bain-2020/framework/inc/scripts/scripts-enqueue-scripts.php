@@ -11,7 +11,6 @@ if (!function_exists('baindesign324_enqueue_scripts')) :
          // Vendor
 
          wp_enqueue_script('baindesign324_lity', get_template_directory_uri() . '/framework/assets/js/source/vendor/lity.min.js', array(), null, TRUE);
-         wp_enqueue_script('baindesign324_aos', '//cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js', array(), null, false);
          wp_enqueue_script('baindesign324_slick', get_template_directory_uri() . '/framework/assets/js/source/vendor/slick.min.js', array('jquery'), null, TRUE);
 
          // Custom
@@ -40,6 +39,26 @@ if (!function_exists('bd324_enqueue_script_toggle')) :
          wp_enqueue_script('bd324_fw_toggle', get_template_directory_uri() . '/framework/assets/js/source/vendor/responsive-nav.js', array('jquery'), null, TRUE);
          // Config
          wp_enqueue_script('bd324_fw_toggle_config', get_template_directory_uri() . '/framework/assets/js/source/custom/fw-config-toggle.js', array(), null, TRUE);
+      }
+   }
+endif;
+
+if (!function_exists('bd324_enqueue_aos')) :
+   function bd324_enqueue_aos()
+   {
+      if (!is_admin()) {
+         // Vendor
+         wp_enqueue_script('baindesign324_aos', '//unpkg.com/aos@2.3.1/dist/aos.js', array(), null, false);
+      }
+   }
+endif;
+
+if (!function_exists('bd324_enqueue_aos_config')) :
+   function bd324_enqueue_aos_config()
+   {
+      if (!is_admin()) {
+         // Vendor
+         wp_enqueue_script('baindesign324_aos_config', get_template_directory_uri() . '/framework/assets/js/source/custom/aos-config.js', array('baindesign324_aos'), null, false);
       }
    }
 endif;

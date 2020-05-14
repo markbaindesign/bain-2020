@@ -25,27 +25,27 @@ $post_classes = implode(" ",$classes);
 
 ?>
 
-<article class="<?php echo $post_classes; ?>">
+<article class="<?php echo $post_classes; ?>" <?php echo bd324_aos_data_atts('content-archive', 'article'); ?> >
 
    <?php // Post image
    if ($image_url) :
    ?>
-      <div class="post__image">
+      <div class="post__image" <?php echo bd324_aos_data_atts('content-archive', 'post__image'); ?>>
          <a href="<?php echo $post_link ?>" title="<?php echo $post_title; ?>">
             <img src="<?php echo $image_url ?>" alt=''>
          </a>
       </div>
    <?php endif; ?>
-   <div class="post__body">
+   <div class="post__body" <?php echo bd324_aos_data_atts('content-archive', 'post__body'); ?>>
       <?php // Post title 
       ?>
-      <h2 class="post__title">
+      <h2 class="post__title" <?php echo bd324_aos_data_atts('content-archive', 'post__title'); ?>>
          <a class="post__link" href="<?php echo $post_link; ?>" title="<?php echo esc_html($post_title); ?>"><?php echo $post_display_title; ?></a>
       </h2>
 
       <?php // Post meta
       if ($post_meta) : ?>
-         <div class="post__meta">
+         <div class="post__meta" <?php echo bd324_aos_data_atts('content-archive', 'post__metay'); ?>>
             <span><?php echo $post_meta; ?></span>
          </div>
       <?php endif; ?>
@@ -53,12 +53,12 @@ $post_classes = implode(" ",$classes);
       <?php // Post excerpt
       if ($post_excerpt) :
       ?>
-         <div class="post__excerpt"><?php echo $post_excerpt; ?></div>
+         <div class="post__excerpt" <?php echo bd324_aos_data_atts('content-archive', 'post__excerpt'); ?>><?php echo $post_excerpt; ?></div>
       <?php endif; ?>
 
       <?php // Post footer 
       ?>
-      <footer class="post__more">
+      <footer class="post__more" <?php echo bd324_aos_data_atts('content-archive', 'post__more'); ?>>
          <a class="post__link" href="<?php echo $post_link ?>" title="<?php _e('Read more about ', '_baindesign'); ?> <?php echo esc_html($post_title); ?>">
             <span class=""><?php _e('Read more', '_baindesign'); ?> </span><i class="fa"></i>
          </a>

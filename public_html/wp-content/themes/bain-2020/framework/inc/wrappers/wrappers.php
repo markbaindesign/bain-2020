@@ -8,7 +8,9 @@ if ( ! function_exists( 'baindesign324_generic_wrapper' ) ) :
 		$id = NULL, 				// Basically for single posts
 		array $classes = NULL,  // An array of post classes
 		$position = NULL			// To close wrapper
+
 	) {
+		$data_atts = bd324_aos_data_atts('wrapper', 'generic');
 		if ( $position == 'close' ) {
 			echo '</div></div>';
 		
@@ -16,7 +18,7 @@ if ( ! function_exists( 'baindesign324_generic_wrapper' ) ) :
 			// Add "section" class
 			$classes[] = 'section';
 			$post_classes = implode(" ",$classes);
-			echo '<div class="'.$post_classes.'"><div class="container">';
+			echo '<div class="'.$post_classes.'" ' . $data_atts . '><div class="container">';
 		}
 	}
 endif;

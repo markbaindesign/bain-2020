@@ -97,4 +97,10 @@ add_action( 'wp_head', 'bd324_typekit', 10 );
 add_filter('body_class', 'bd324_font_face_observer_classes', 10);
 add_action( 'wp_enqueue_scripts', 'bd324_font_face_observer_scripts', 30 );
 
+// AOS "Animation On Scroll"
+add_action( 'wp_enqueue_scripts', 'bd324_enqueue_aos', 20 );
+add_action( 'wp_enqueue_scripts', 'bd324_enqueue_aos_config', 25 );
+add_action( 'wp_enqueue_scripts', 'bd324_enqueue_aos_styles', 30 );
+
+
 
