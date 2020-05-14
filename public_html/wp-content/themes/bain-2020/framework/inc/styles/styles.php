@@ -6,8 +6,26 @@ if (!function_exists('baindesign324_enqueue_styles')) :
    function baindesign324_enqueue_styles()
    {
       if (!is_admin()) {
-         $version = baindesign324_theme_version();
-         wp_enqueue_style('baindesign324-style', get_template_directory_uri() . '/style.' . $version . '.css', array(), null, false);
+			$version = baindesign324_theme_version();
+			$versioned_style_filename = '/style.' . $version . '.css';
+			$versioned_style_uri = get_template_directory_uri() . $versioned_style_filename;
+			$versioned_style_path = get_theme_file_path( $versioned_style_filename );
+			$default_style_uri = get_template_directory_uri() . '/style.css';
+
+			// If there's a versioned stylesheet. load that; otherwise,
+			// load the default stylesheet. 
+			if ( file_exists( $versioned_style_path ) ) {
+				var_dump('YES');
+				$target_style = $versioned_style_uri;				
+			} else {
+				var_dump('NO');
+				$target_style = $default_style_uri;
+			}
+			var_dump($versioned_style_path);
+			var_dump($target_style);
+
+			// Enqueue the stylesheet
+			wp_enqueue_style('baindesign324-style', $target_style, array(), null, false);
       }
    }
 endif;
