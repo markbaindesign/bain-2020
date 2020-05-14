@@ -23,6 +23,7 @@ add_action('baindesign324_header_top', 'baindesign324_header_top_wrapper_close',
 add_action('baindesign324_header_top', 'baindesign324_header_top_wrapper_open', 10);
 add_action('baindesign324_header_top', 'baindesign324_menu_standard', 30);
 add_action('baindesign324_header_top', 'baindesign324_mmenu_mhead', 5);
+add_action('baindesign324_header_top', 'baindesign324_sticky_header', 5);
 add_action('baindesign324_header_top', 'baindesign324_site_branding_title', 20);
 
 // Menu toggles
@@ -39,7 +40,7 @@ add_action('baindesign324_header_top', 'baindesign324_toggle_search', 60);
  */
 add_action('baindesign324_pre_colophon', 'bd324_pagination_section',                      10);
 add_action('baindesign324_pre_colophon', 'bd324_main_cta',                                20);
-add_action('baindesign324_pre_colophon', 'baindesign324_related_blog_posts',              30);
+add_action('baindesign324_pre_colophon', 'bd324_show_related_posts_section',              30);
 add_action('baindesign324_pre_colophon', 'bd324_mailchimp_form_section',                   40);
 add_action('baindesign324_pre_colophon', 'baindesign324_footer_sidebars',                 50);
 add_action('baindesign324_pre_colophon', 'baindesign324_footer_sidebar',                  60);
@@ -107,10 +108,10 @@ add_action('baindesign324_pre_header', 'baindesign324_social_links', 60);
 /**
  * Primary
  */
-add_action('baindesign324_primary_before', 'bd324_show_article_header', 20);
-add_action('baindesign324_primary_before', 'baindesign324_content_secondary', 40);
-add_action('baindesign324_primary_before', 'baindesign324_generic_wrapper_close', 30);
 add_action('baindesign324_primary_before', 'baindesign324_page_intro_wrapper_open', 10);
+add_action('baindesign324_primary_before', 'bd324_show_article_header', 20);
+add_action('baindesign324_primary_before', 'baindesign324_generic_wrapper_close', 30);
+add_action('baindesign324_primary_before', 'baindesign324_content_secondary', 40);
 
 // Templates
 // Assign content to templates

@@ -127,6 +127,35 @@
             "ui": 1,
             "ui_on_text": "",
             "ui_off_text": ""
+        },
+        {
+            "key": "field_5eaab1272e988",
+            "label": "Linked Testimonials",
+            "name": "linked_testimonials",
+            "type": "relationship",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "testimonial"
+            ],
+            "taxonomy": "",
+            "filters": [
+                "search",
+                "post_type",
+                "taxonomy"
+            ],
+            "elements": [
+                "featured_image"
+            ],
+            "min": "",
+            "max": "",
+            "return_format": "object"
         }
     ],
     "location": [
@@ -146,5 +175,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "Custom fields for Project-type CPT e.g. \"date\", \"client\", \"link\", and so on.",
-    "modified": 1540828213
+    "modified": 1588244920
 }

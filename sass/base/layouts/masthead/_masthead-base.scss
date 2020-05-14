@@ -2,14 +2,16 @@
 	background-color: $grey;
 	@extend .menu--dropdown;
 	.container {
-		.site-branding {
-			.site-logo {
-				max-width: 100px;
-				padding: 10px 0;
-				text-align: center;
-			}
+		padding-top: $header-spacing-top;
+		padding-bottom: $header-spacing-bottom;
+		@include bp($tablet){
+			padding-top: $header-spacing-top;
+			padding-bottom: $header-spacing-bottom;
 		}
-
+	}
+	.site-logo {
+		max-width: 100px;
+		text-align: center;
 	}
 }
 .hidden-search, #search-toggle {

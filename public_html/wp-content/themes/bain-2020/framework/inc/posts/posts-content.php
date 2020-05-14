@@ -84,10 +84,12 @@ endif;
 if (!function_exists('bd324_show_article_header')) :
    function bd324_show_article_header()
    {
-      echo '<header class="post__header">';
-      echo baindesign324_post_title();
-      echo baindesign324_post_author();
-      echo bd324_get_post_date();
-      echo '</header>';
+      if ( is_single() || is_page() ) {
+         echo '<header class="post__header">';
+         echo baindesign324_post_title();
+         echo baindesign324_post_author();
+         echo bd324_get_post_date();
+         echo '</header>';
+      }
    }
 endif;

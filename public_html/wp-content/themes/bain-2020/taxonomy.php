@@ -10,7 +10,7 @@
 	if ( $archive_title ) {
 		$title = $archive_title;
 	} else {
-		$title = the_archive_title();
+		// $title = the_archive_title();
 	}
 
 	// Do we have featured posts to show?	
@@ -66,12 +66,14 @@
 
 <?php if ( have_posts() ) : ?>
 
-	<div class="posts-section posts-not-featured section">
-		<div class="container media-object-container">
-			<?php while ( have_posts() ):
-				the_post();
-				get_template_part('content', 'archive');
-			endwhile; ?>
+	<div class="posts posts--latest">
+		<div class="container">
+			<div class="posts__wrapper">
+				<?php while ( have_posts() ):
+					the_post();
+					get_template_part('content-archive');
+				endwhile; ?>
+			</div>
 		</div><!-- .container -->
 	</div><!-- .section -->
 

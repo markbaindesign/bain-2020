@@ -63,6 +63,29 @@ if (!function_exists('baindesign324_post_tags')) :
 endif;
 
 /**
+ * Return a list of custom taxonomy terms for a post
+ */
+
+if (!function_exists( 'bd324_custom_tax_terms' )) :
+   function bd324_custom_tax_terms( $tax )
+   {
+      if (!is_single()) {
+         return;
+      }
+
+      $terms = get_the_term_list( 
+         get_the_ID(), 
+         $tax, 
+         '<ul class="post-tags post-tags__custom"><li>',
+         '</li><li>',
+         '</li></ul>'
+      );
+      
+      return $terms;
+   }
+endif;
+
+/**
  * Post Tags Section
  */
 if (!function_exists('baindesign324_post_tags_section')) :
@@ -74,9 +97,11 @@ if (!function_exists('baindesign324_post_tags_section')) :
 
       // Check for tags
       $tags = baindesign324_post_tags();
+      $portfolio_terms = bd324_custom_tax_terms( 'skill' );
       $cats = get_the_category_list();
+      // var_dump( $portfolio_terms );
 
-      if (!$tags || !$cats){
+      if (!$tags && !$cats && !$portfolio_terms ){
          return;
       }
 
@@ -85,8 +110,15 @@ if (!function_exists('baindesign324_post_tags_section')) :
       );
       baindesign324_generic_wrapper(NULL, $classes, NULL);
       echo '<div class="post-taxonomies">';
-      echo $cats;
-      echo $tags;
+      if ( $cats ) {
+         echo $cats;
+      }
+      if ( $tags ) {
+         echo $tags;
+      }
+      if ( $portfolio_terms ) {
+         echo $portfolio_terms;
+      }
       echo '</div>';
       baindesign324_generic_wrapper(NULL, NULL, 'close');
    }

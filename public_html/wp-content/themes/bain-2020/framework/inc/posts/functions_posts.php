@@ -18,7 +18,6 @@ require get_template_directory() . '/framework/inc/posts/posts-custom-date.php';
 require get_template_directory() . '/framework/inc/posts/posts-external-links.php';
 require get_template_directory() . '/framework/inc/posts/posts-featured-post.php';
 require get_template_directory() . '/framework/inc/posts/posts-intro.php';
-require get_template_directory() . '/framework/inc/posts/posts-related-custom.php';
 require get_template_directory() . '/framework/inc/posts/posts-related.php';
 require get_template_directory() . '/framework/inc/posts/posts-remove-more-link.php';
 require get_template_directory() . '/framework/inc/posts/posts-subheader.php';
@@ -26,3 +25,15 @@ require get_template_directory() . '/framework/inc/posts/posts-testimonials-meta
 require get_template_directory() . '/framework/inc/posts/posts-title.php';
 require get_template_directory() . '/framework/inc/posts/search-functions.php';
 require get_template_directory() . '/framework/inc/posts/loops/loops.php';
+require get_template_directory() . '/framework/inc/posts/meta.php';
+require get_template_directory() . '/framework/inc/posts/section-header.php';
+
+// Helpers
+
+if ( ! function_exists( 'baindesign324_get_post_labels' ) ) :
+   function baindesign324_get_post_labels( $post_type ) {	
+      global $wp_post_types;
+      $labels = &$wp_post_types[$post_type]->labels;
+      return $labels;
+   }
+endif;

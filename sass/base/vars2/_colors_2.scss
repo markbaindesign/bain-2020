@@ -1,7 +1,8 @@
 $color_text: $black !default;
 
 // Text Selection
-$color_text-selection: yellow !default;
+$color_text-selection: $black !default;
+$background-color_text-selection: yellow !default;
 
 $color_background: $white !default;
 $color_background-cta: orange !default;

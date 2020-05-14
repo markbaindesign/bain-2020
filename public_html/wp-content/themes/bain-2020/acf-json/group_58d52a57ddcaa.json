@@ -172,6 +172,50 @@
                     "display": "block",
                     "sub_fields": [
                         {
+                            "key": "field_5eaaa855cb03d",
+                            "label": "Text Size",
+                            "name": "text_size",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "Larger?",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
+                            "key": "field_5eaaaaa305fde",
+                            "label": "Columns",
+                            "name": "columns",
+                            "type": "radio",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "1": "1",
+                                "2": "2",
+                                "3": "3"
+                            },
+                            "allow_null": 0,
+                            "other_choice": 0,
+                            "default_value": 1,
+                            "layout": "vertical",
+                            "return_format": "value",
+                            "save_other_choice": 0
+                        },
+                        {
                             "key": "field_58d52b96d8832",
                             "label": "Text",
                             "name": "text",
@@ -189,6 +233,138 @@
                             "toolbar": "full",
                             "media_upload": 1,
                             "delay": 0
+                        },
+                        {
+                            "key": "field_5eb12baeb21be",
+                            "label": "Aside",
+                            "name": "aside",
+                            "type": "group",
+                            "instructions": "An aside is a small amount of text, or an image, that goes alongside the main text.",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5eaaaaa305fde",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_5eb12bc3b21bf",
+                                    "label": "Aside Content",
+                                    "name": "aside_content",
+                                    "type": "radio",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "25",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "image": "Image",
+                                        "text": "Text"
+                                    },
+                                    "allow_null": 0,
+                                    "other_choice": 0,
+                                    "default_value": "",
+                                    "layout": "vertical",
+                                    "return_format": "value",
+                                    "save_other_choice": 0
+                                },
+                                {
+                                    "key": "field_5eb12de2015c5",
+                                    "label": "Aside Position",
+                                    "name": "aside_position",
+                                    "type": "radio",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "25",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "left": "Left",
+                                        "right": "Right"
+                                    },
+                                    "allow_null": 0,
+                                    "other_choice": 0,
+                                    "default_value": "",
+                                    "layout": "vertical",
+                                    "return_format": "value",
+                                    "save_other_choice": 0
+                                },
+                                {
+                                    "key": "field_5eb12c2eb21c0",
+                                    "label": "Aside Image",
+                                    "name": "aside_image",
+                                    "type": "image",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_5eb12bc3b21bf",
+                                                "operator": "==",
+                                                "value": "image"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "array",
+                                    "preview_size": "latest_post",
+                                    "library": "all",
+                                    "min_width": "",
+                                    "min_height": "",
+                                    "min_size": "",
+                                    "max_width": "",
+                                    "max_height": "",
+                                    "max_size": "",
+                                    "mime_types": ""
+                                },
+                                {
+                                    "key": "field_5eb12c69b21c1",
+                                    "label": "Aside Text",
+                                    "name": "aside_text",
+                                    "type": "textarea",
+                                    "instructions": "Max 150 characters",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_5eb12bc3b21bf",
+                                                "operator": "==",
+                                                "value": "text"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "maxlength": 150,
+                                    "rows": 4,
+                                    "new_lines": ""
+                                }
+                            ]
                         }
                     ],
                     "min": "",
@@ -303,15 +479,15 @@
                 },
                 "layout_5e6a5e6e3ec1e": {
                     "key": "layout_5e6a5e6e3ec1e",
-                    "name": "latest_blog_posts_layout",
-                    "label": "Latest Blog Posts",
+                    "name": "latest_posts_layout",
+                    "label": "Latest Posts",
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5e9464ebc32e2",
-                            "label": "Section Header",
-                            "name": "section_header",
-                            "type": "text",
+                            "key": "field_5ea97fd0e49ee",
+                            "label": "Post Type",
+                            "name": "post_type",
+                            "type": "radio",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -320,30 +496,16 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
-                        },
-                        {
-                            "key": "field_5e9464f8c32e3",
-                            "label": "Section Sub-header",
-                            "name": "section_sub-header",
-                            "type": "text",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
+                            "choices": {
+                                "post": "Posts",
+                                "project": "Projects"
                             },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
+                            "allow_null": 0,
+                            "other_choice": 0,
+                            "default_value": "posts",
+                            "layout": "vertical",
+                            "return_format": "value",
+                            "save_other_choice": 0
                         },
                         {
                             "key": "field_5e9464d4c32e1",
@@ -433,6 +595,44 @@
                             "key": "field_5e9469e90a3d2",
                             "label": "Read more label",
                             "name": "read_more_label",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5e9464ebc32e2",
+                            "label": "Section Header",
+                            "name": "section_header",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5e9464f8c32e3",
+                            "label": "Section Sub-header",
+                            "name": "section_sub-header",
                             "type": "text",
                             "instructions": "",
                             "required": 0,
@@ -589,6 +789,27 @@
                 "operator": "==",
                 "value": "front_page"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "project"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "testimonial_item"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "testimonial"
+            }
         ]
     ],
     "menu_order": 0,
@@ -599,5 +820,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "Add sections to posts or pages, like text blocks, quotes, or image galleries",
-    "modified": 1586791614
+    "modified": 1588866656
 }

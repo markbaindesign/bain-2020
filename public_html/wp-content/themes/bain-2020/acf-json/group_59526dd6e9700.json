@@ -89,10 +89,10 @@
         },
         {
             "key": "field_5bdb1fefd223d",
-            "label": "Copyright notice",
+            "label": "Custom Copyright Notice",
             "name": "copyright_notice",
             "type": "text",
-            "instructions": "",
+            "instructions": "By default, the copyright notice will appear in your theme footer in the following format:<br \/>\r\n© {current-year} {your-site-name}<br \/>\r\nYou can replace that with a custom copyright notice here.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -415,5 +415,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "These fields can be used across the whole site. Not limited to individual posts. <br>Examples: archive page content, store address, contact details.<br>By its nature, this page may be more customized than other field groups.",
-    "modified": 1586881198
+    "modified": 1587717197
 }
