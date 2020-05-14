@@ -15,14 +15,10 @@ if (!function_exists('baindesign324_enqueue_styles')) :
 			// If there's a versioned stylesheet. load that; otherwise,
 			// load the default stylesheet. 
 			if ( file_exists( $versioned_style_path ) ) {
-				var_dump('YES');
 				$target_style = $versioned_style_uri;				
 			} else {
-				var_dump('NO');
 				$target_style = $default_style_uri;
 			}
-			var_dump($versioned_style_path);
-			var_dump($target_style);
 
 			// Enqueue the stylesheet
 			wp_enqueue_style('baindesign324-style', $target_style, array(), null, false);
