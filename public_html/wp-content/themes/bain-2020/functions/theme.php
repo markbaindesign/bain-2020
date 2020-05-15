@@ -13,6 +13,16 @@
  * 
  */
 
+function bd324_get_dev_sites()
+{ 
+   // Return array of dev sites
+   // for cache-busting.
+   $sites = array(
+      'https://bain-design-2020.test',
+   );
+   return $sites;
+ }
+
 function bd324_typekit() { ?>
    <script>
      (function(d) {

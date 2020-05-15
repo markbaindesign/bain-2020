@@ -6,18 +6,21 @@ if (!function_exists('baindesign324_enqueue_styles')) :
    function baindesign324_enqueue_styles()
    {
       if (!is_admin()) {
+
+			$is_dev = bd324_is_dev_site(); // Check if this is a dev site
+
 			$version = baindesign324_theme_version();
 			$versioned_style_filename = '/style.' . $version . '.css';
 			$versioned_style_uri = get_template_directory_uri() . $versioned_style_filename;
 			$versioned_style_path = get_theme_file_path( $versioned_style_filename );
 			$default_style_uri = get_template_directory_uri() . '/style.css';
 
-			// If there's a versioned stylesheet. load that; otherwise,
+			// If there's a versioned stylesheet & this isn't a dev site, load that; otherwise,
 			// load the default stylesheet. 
-			if ( file_exists( $versioned_style_path ) ) {
-				$target_style = $versioned_style_uri;				
+			if ( file_exists( $versioned_style_path ) && $is_dev == FALSE ) {
+				$target_style = $versioned_style_uri;
 			} else {
-				$target_style = $default_style_uri;
+				$target_style = $default_style_uri; // Dev site or no versioned CSS
 			}
 
 			// Enqueue the stylesheet
