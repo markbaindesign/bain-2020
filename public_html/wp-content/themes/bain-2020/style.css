@@ -16662,8 +16662,8 @@ Layout
     .section, .cover__section, .posts, #post-taxonomies, #widget-area .widget-container .widget {
       padding-left: 5%;
       padding-right: 5%;
-      padding-top: 1.5rem;
-      padding-bottom: 1.5rem; } }
+      padding-top: 2.5rem;
+      padding-bottom: 2.5rem; } }
   @media (min-width: 768px) {
     .section--major, .site-footer, .cover, .cta, .posts--related {
       padding-top: 3rem;
@@ -16699,8 +16699,8 @@ Layout
   @media (min-width: 768px) {
     .right-sidebar #content,
     .left-sidebar #content {
-      padding-top: 1.5rem;
-      padding-bottom: 1.5rem;
+      padding-top: 2.5rem;
+      padding-bottom: 2.5rem;
       padding-left: 5%;
       padding-right: 5%; } }
 
@@ -17382,7 +17382,7 @@ img.last {
       background-color: transparent; } }
   @media (min-width: 768px) {
     .cover__image .cover__container {
-      min-height: calc( 499px - 1.5rem - 1.5rem);
+      min-height: calc( 499px - 2.5rem - 2.5rem);
       display: flex;
       flex-flow: row wrap;
       justify-content: center;
@@ -18414,8 +18414,7 @@ ul.social-media-links {
 
 .mm-menu {
   background-color: #F6F4EF;
-  padding-top: 70px;
-  font-size: 3rem;
+  font-size: 3.5rem;
   font-family: span, serif;
   --mm-color-border: transparent;
   --mm-listitem-size: 80px;

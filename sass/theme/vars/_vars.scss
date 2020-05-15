@@ -10,14 +10,18 @@ $fa-font-size-base: 18px;
 //$alt-font-family: "LotaGrotesque-ExLight"; 
 //$alt2-font-family: "LotaGrotesque-Light"; 
 
-$base-font-family:      span, serif     !default;
-$alt-font-family:       span, serif      !default;
-$alt2-font-family:      lemonde-sans, sans-serif     !default;
+$base-font-family:      span, serif;
+$alt-font-family:       span, serif;
+$alt2-font-family:      lemonde-sans, sans-serif;
 
 // Buttons
 $button-border-radius: 0;
 
 // Brand colors
 
-$color-primary:      #f4d9e0 !default;
-$color-neutral:      #F6F4EF !default;
+$color-primary:      #f4d9e0;
+$color-neutral:      #F6F4EF;
+
+// Layout
+$section-padding-minor-top: 2.5rem;
+$section-padding-minor-bottom: 2.5rem;
